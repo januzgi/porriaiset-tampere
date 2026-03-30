@@ -298,6 +298,23 @@ function initCakeForm() {
   });
 }
 
+/* ===== Cake Form Toggle ===== */
+function toggleCakeForm() {
+  const wrapper = document.getElementById('cakeFormWrapper');
+  const btn = document.getElementById('cakeFormToggle');
+  const t = translations[currentLang].cakeOrder;
+  const isHidden = wrapper.style.display === 'none';
+
+  wrapper.style.display = isHidden ? 'block' : 'none';
+  btn.textContent = isHidden ? t.closeForm : t.openForm;
+
+  if (isHidden) {
+    wrapper.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    // Initialize date picker on first reveal
+    if (!datePicker) initDatePicker();
+  }
+}
+
 /* ===== Date Picker ===== */
 function initDatePicker() {
   const t = translations[currentLang].cakeOrder;
@@ -364,7 +381,6 @@ function updateFooterYear() {
 
 /* ===== Initialize ===== */
 document.addEventListener('DOMContentLoaded', () => {
-  initDatePicker();
   setLanguage(currentLang);
   loadMenu();
   initMobileNav();

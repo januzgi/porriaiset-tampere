@@ -1,479 +1,751 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="fi">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Pörriäiset Lounaskahvila | Tampere</title>
-  <meta name="description" content="Pörriäiset – perinteistä suomalaista kotiruokaa ja tuoreita leipomotuotteita Tampereella. Lounaskahvila & konditoria, Teiskontie 23.">
-  <meta name="keywords" content="lounas, Tampere, kotiruoka, leipomo, konditoria, kahvila, Pörriäiset, Teiskontie">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pörriäiset Lounaskahvila | Tampere</title>
+    <meta
+      name="description"
+      content="Pörriäiset – perinteistä suomalaista kotiruokaa ja tuoreita leipomotuotteita Tampereella. Lounaskahvila & konditoria, Teiskontie 23."
+    />
+    <meta
+      name="keywords"
+      content="lounas, Tampere, kotiruoka, leipomo, konditoria, kahvila, Pörriäiset, Teiskontie"
+    />
 
-  <!-- Open Graph -->
-  <meta property="og:title" content="Pörriäiset Lounaskahvila | Tampere">
-  <meta property="og:description" content="Perinteistä suomalaista kotiruokaa ja tuoreita leipomotuotteita Tampereella.">
-  <meta property="og:type" content="restaurant">
-  <meta property="og:image" content="images/outdoors-view-sunshine.jpg">
-  <meta property="og:locale" content="fi_FI">
-  <meta property="og:locale:alternate" content="en_GB">
+    <!-- Open Graph -->
+    <meta property="og:title" content="Pörriäiset Lounaskahvila | Tampere" />
+    <meta
+      property="og:description"
+      content="Perinteistä suomalaista kotiruokaa ja tuoreita leipomotuotteita Tampereella."
+    />
+    <meta property="og:type" content="restaurant" />
+    <meta property="og:image" content="images/outdoors-view-sunshine.jpg" />
+    <meta property="og:locale" content="fi_FI" />
+    <meta property="og:locale:alternate" content="en_GB" />
 
-  <!-- Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;0,700;1,400&family=Source+Sans+3:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;0,700;1,400&family=Source+Sans+3:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
 
-  <!-- Flatpickr date picker -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
-  <link rel="stylesheet" href="css/style.css">
+    <!-- Flatpickr date picker -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css"
+    />
+    <link rel="stylesheet" href="css/style.css" />
 
-  <!-- Schema.org structured data -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Restaurant",
-    "name": "Pörriäiset Lounaskahvila",
-    "image": "images/outdoors-view-sunshine.jpg",
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "Teiskontie 23",
-      "addressLocality": "Tampere",
-      "postalCode": "33500",
-      "addressCountry": "FI"
-    },
-    "telephone": "+358442442434",
-    "servesCuisine": "Finnish",
-    "priceRange": "€€",
-    "openingHoursSpecification": [
+    <!-- Schema.org structured data -->
+    <script type="application/ld+json">
       {
-        "@type": "OpeningHoursSpecification",
-        "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
-        "opens": "07:00",
-        "closes": "15:00"
+        "@context": "https://schema.org",
+        "@type": "Restaurant",
+        "name": "Pörriäiset Lounaskahvila",
+        "image": "images/outdoors-view-sunshine.jpg",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Teiskontie 23",
+          "addressLocality": "Tampere",
+          "postalCode": "33500",
+          "addressCountry": "FI"
+        },
+        "telephone": "+358442442434",
+        "servesCuisine": "Finnish",
+        "priceRange": "€€",
+        "openingHoursSpecification": [
+          {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": [
+              "Monday",
+              "Tuesday",
+              "Wednesday",
+              "Thursday",
+              "Friday"
+            ],
+            "opens": "07:00",
+            "closes": "15:00"
+          }
+        ],
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "4.5",
+          "reviewCount": "69",
+          "bestRating": "5"
+        },
+        "paymentAccepted": "Credit Card, Debit Card, NFC Mobile Payment",
+        "currenciesAccepted": "EUR",
+        "url": "https://maps.app.goo.gl/DQJr4gXQ6MGKKphq9"
       }
-    ],
-    "aggregateRating": {
-      "@type": "AggregateRating",
-      "ratingValue": "4.5",
-      "reviewCount": "69",
-      "bestRating": "5"
-    },
-    "paymentAccepted": "Credit Card, Debit Card, NFC Mobile Payment",
-    "currenciesAccepted": "EUR",
-    "url": "https://maps.app.goo.gl/DQJr4gXQ6MGKKphq9"
-  }
-  </script>
-</head>
-<body>
-  <!-- Navigation -->
-  <nav class="site-nav" id="siteNav">
-    <div class="nav-inner">
-      <a href="#" class="nav-logo">
-        Pörriäiset
-        <span data-i18n="hero.subtitle">Lounaskahvila & Konditoria</span>
-      </a>
+    </script>
+  </head>
+  <body>
+    <!-- Navigation -->
+    <nav class="site-nav" id="siteNav">
+      <div class="nav-inner">
+        <a href="#" class="nav-logo">
+          Pörriäiset
+          <span data-i18n="hero.subtitle">Lounaskahvila & Konditoria</span>
+        </a>
 
-      <div class="nav-links" id="navLinks">
-        <a href="#meista" data-i18n="nav.about">Meistä</a>
-        <a href="#lounas" data-i18n="nav.menu">Lounaslista</a>
-        <a href="#leipomo" data-i18n="nav.bakery">Leipomo</a>
-        <a href="#kakkutilaus" data-i18n="nav.cakeOrder">Kakkutilaukset</a>
-        <a href="#arvostelut" data-i18n="nav.reviews">Arvostelut</a>
-        <a href="#yhteystiedot" data-i18n="nav.contact">Yhteystiedot</a>
-        <a href="admin.html" class="nav-admin" data-i18n="nav.admin">Hallinta</a>
+        <div class="nav-links" id="navLinks">
+          <a href="#meista" data-i18n="nav.about">Meistä</a>
+          <a href="#lounas" data-i18n="nav.menu">Lounaslista</a>
+          <a href="#arvostelut" data-i18n="nav.reviews">Arvostelut</a>
+          <a href="#leipomo" data-i18n="nav.bakery">Leipomo</a>
+          <a href="#kakkutilaus" data-i18n="nav.cakeOrder">Kakkutilaukset</a>
+          <a href="#yhteystiedot" data-i18n="nav.contact">Yhteystiedot</a>
+          <a href="admin.html" class="nav-admin" data-i18n="nav.admin"
+            >Hallinta</a
+          >
 
-        <div class="lang-toggle">
-          <button id="langFi" class="active" onclick="setLanguage('fi')">FI</button>
-          <button id="langEn" onclick="setLanguage('en')">EN</button>
+          <div class="lang-toggle">
+            <button id="langFi" class="active" onclick="setLanguage('fi')">
+              FI
+            </button>
+            <button id="langEn" onclick="setLanguage('en')">EN</button>
+          </div>
         </div>
+
+        <button class="nav-hamburger" id="navHamburger" aria-label="Menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
       </div>
+    </nav>
 
-      <button class="nav-hamburger" id="navHamburger" aria-label="Menu">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
-    </div>
-  </nav>
+    <div class="nav-overlay" id="navOverlay"></div>
 
-  <div class="nav-overlay" id="navOverlay"></div>
-
-  <main>
-    <!-- Hero -->
-    <section class="hero" id="hero">
-      <div class="hero-bg" role="img" aria-label="Pörriäiset Lounaskahvila storefront"></div>
-      <div class="hero-content">
-        <p class="hero-subtitle" data-i18n="hero.subtitle">Lounaskahvila & Konditoria</p>
-        <h1>Pörriäiset</h1>
-        <p class="hero-tagline" data-i18n="hero.tagline">Perinteistä suomalaista kotiruokaa Tampereella</p>
-        <div class="hero-cta">
-          <a href="#lounas" class="btn btn-primary" data-i18n="hero.cta">Katso lounaslista</a>
-          <a href="#kakkutilaus" class="btn btn-outline" data-i18n="hero.ctaSecondary">Tilaa kakku</a>
-        </div>
-      </div>
-    </section>
-
-    <!-- About -->
-    <section class="section" id="meista">
-      <div class="container">
-        <div class="about-grid fade-in">
-          <div class="about-image">
-            <img src="images/indoors-view.jpg" alt="Pörriäiset sisältä – lämmin ja kodikas tunnelma" loading="lazy">
-          </div>
-          <div class="about-text">
-            <span class="section-label" data-i18n="nav.about">Meistä</span>
-            <h2 data-i18n="about.title">Tervetuloa Pörriäisiin</h2>
-            <p data-i18n="about.p1">Pörriäiset on perheomistuksessa oleva lounaskahvila ja konditoria Tampereen Teiskontie 23:ssa. Kolmen sukupolven – isoäidin, äidin ja tyttären – voimin pidämme perinteitä arvossa ja tarjoamme aitoa suomalaista kotiruokaa jo vuosikymmenien ajan.</p>
-            <p data-i18n="about.p2">Kaikki leipomotuotteemme valmistetaan käsin paikan päällä tuoreista raaka-aineista joka aamu. Valikoimamme kattaa kaiken karjalanpiirakoista ja sämpylöistä herkullisiin pulliin, pitkoihin ja pasteijoihin.</p>
-            <p data-i18n="about.p3">Lounaalla tarjoamme päivittäin vaihtuvat vaihtoehdot – pääruoka ja keitto – joihin sisältyy runsas salaattipöytä, tuoreet leivät, jälkiruoka ja kahvi.</p>
+    <main>
+      <!-- Hero -->
+      <section class="hero" id="hero">
+        <div
+          class="hero-bg"
+          role="img"
+          aria-label="Pörriäiset Lounaskahvila storefront"
+        ></div>
+        <div class="hero-content">
+          <p class="hero-subtitle" data-i18n="hero.subtitle">
+            Lounaskahvila & Konditoria
+          </p>
+          <h1>Pörriäiset</h1>
+          <p class="hero-tagline" data-i18n="hero.tagline">
+            Perinteistä suomalaista kotiruokaa Tampereella
+          </p>
+          <div class="hero-cta">
+            <a href="#lounas" class="btn btn-primary" data-i18n="hero.cta"
+              >Katso lounaslista</a
+            >
+            <a
+              href="#kakkutilaus"
+              class="btn btn-outline"
+              data-i18n="hero.ctaSecondary"
+              >Tilaa kakku</a
+            >
           </div>
         </div>
+      </section>
 
-        <div class="about-highlights fade-in">
-          <div class="highlight-card">
-            <span class="highlight-icon" aria-hidden="true">&#127858;</span>
-            <h3 data-i18n="about.highlight1Title">Kotiruokaa</h3>
-            <p data-i18n="about.highlight1Text">Perinteistä suomalaista ruokaa tuoreista raaka-aineista, ilman puolivalmisteita</p>
-          </div>
-          <div class="highlight-card">
-            <span class="highlight-icon" aria-hidden="true">&#127838;</span>
-            <h3 data-i18n="about.highlight2Title">Itse leivottua</h3>
-            <p data-i18n="about.highlight2Text">Kaikki leipomotuotteet valmistetaan käsin paikan päällä joka aamu</p>
-          </div>
-          <div class="highlight-card">
-            <span class="highlight-icon" aria-hidden="true">&#10084;&#65039;</span>
-            <h3 data-i18n="about.highlight3Title">Perheravintola</h3>
-            <p data-i18n="about.highlight3Text">Kolmen sukupolven perheyritys – lämmintä palvelua ja perinteitä</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Food showcase divider -->
-    <div class="food-showcase">
-      <img src="images/nakit-ja-muusi.jpg" alt="Päivän lounas – nakit ja muusi salaattien kera" loading="lazy">
-    </div>
-
-    <!-- Lunch Menu -->
-    <section class="section section-alt" id="lounas">
-      <div class="container">
-        <div class="section-header fade-in">
-          <span class="section-label" data-i18n="nav.menu">Lounaslista</span>
-          <h2 data-i18n="menu.title">Viikon lounaslista</h2>
-        </div>
-
-        <div class="menu-header-info fade-in">
-          <div class="menu-badge">
-            <span data-i18n="menu.price">Lounas</span>
-            <span class="price" id="menuPrice">12 &euro;</span>
-          </div>
-          <div class="menu-badge">
-            <span data-i18n="menu.lunchTime">Lounasaika</span>
-            <span class="price" data-i18n="menu.lunchTimeValue">10:30–14:00</span>
-          </div>
-        </div>
-
-        <div class="menu-grid fade-in" id="menuGrid">
-          <!-- Populated by JS -->
-        </div>
-
-        <p class="menu-included fade-in" data-i18n="menu.included">Lounaaseen sisältyy salaattipöytä, tuore leipä, jälkiruoka ja kahvi.</p>
-        <p class="menu-updated" id="menuUpdated"></p>
-      </div>
-    </section>
-
-    <!-- Bakery -->
-    <section class="section" id="leipomo">
-      <div class="container">
-        <div class="bakery-layout">
-          <div class="bakery-image fade-in">
-            <img src="images/cake-buffet.jpg" alt="Tuoreet leivonnaiset vitriinissä" loading="lazy">
-          </div>
-          <div class="bakery-items fade-in">
-            <span class="section-label" data-i18n="nav.bakery">Leipomo</span>
-            <h2 data-i18n="bakery.title">Leipomo & Konditoria</h2>
-            <p style="color: var(--color-text-light); margin-bottom: var(--spacing-md); font-size: var(--fs-md);" data-i18n="bakery.description">Kaikki leipomotuotteemme leivotaan käsin paikan päällä joka aamu. Tarjolla on runsas valikoima perinteisiä suomalaisia leivonnaisia – tuoreena ja edullisesti.</p>
-
-            <div class="bakery-item">
-              <div class="bakery-item-icon" aria-hidden="true">&#127838;</div>
-              <div>
-                <h3 data-i18n="bakery.bread">Tuoreet leivät & sämpylät</h3>
-                <p data-i18n="bakery.breadDesc">Hiivaleipää, sämpylöitä ja muita tuoreita leipiä päivittäin</p>
-              </div>
+      <!-- About -->
+      <section class="section" id="meista">
+        <div class="container">
+          <div class="about-grid fade-in">
+            <div class="about-image">
+              <img
+                src="images/indoors-view.jpg"
+                alt="Pörriäiset sisältä – lämmin ja kodikas tunnelma"
+                loading="lazy"
+              />
             </div>
-            <div class="bakery-item">
-              <div class="bakery-item-icon" aria-hidden="true">&#129473;</div>
-              <div>
-                <h3 data-i18n="bakery.pastries">Pullat & pitko</h3>
-                <p data-i18n="bakery.pastriesDesc">Voisilmäpullia, korvapuusteja ja muita makeita herkkuja</p>
-              </div>
+            <div class="about-text">
+              <span class="section-label" data-i18n="nav.about">Meistä</span>
+              <h2 data-i18n="about.title">Tervetuloa Pörriäisiin</h2>
+              <p data-i18n="about.p1">
+                Pörriäiset on perheomistuksessa oleva lounaskahvila ja
+                konditoria Tampereen Teiskontie 23:ssa. Kolmen sukupolven –
+                isoäidin, äidin ja tyttären – voimin pidämme perinteitä arvossa
+                ja tarjoamme aitoa suomalaista kotiruokaa jo vuosikymmenien
+                ajan.
+              </p>
+              <p data-i18n="about.p2">
+                Kaikki leipomotuotteemme valmistetaan käsin paikan päällä
+                tuoreista raaka-aineista joka aamu. Valikoimamme kattaa kaiken
+                karjalanpiirakoista ja sämpylöistä herkullisiin pulliin,
+                pitkoihin ja pasteijoihin.
+              </p>
+              <p data-i18n="about.p3">
+                Lounaalla tarjoamme päivittäin vaihtuvat vaihtoehdot – pääruoka
+                ja keitto – joihin sisältyy runsas salaattipöytä, tuoreet
+                leivät, jälkiruoka ja kahvi.
+              </p>
             </div>
-            <div class="bakery-item">
-              <div class="bakery-item-icon" aria-hidden="true">&#129384;</div>
-              <div>
-                <h3 data-i18n="bakery.pies">Karjalanpiirakat</h3>
-                <p data-i18n="bakery.piesDesc">Perinteiset karjalanpiirakat munavoin kera</p>
-              </div>
+          </div>
+
+          <div class="about-highlights fade-in">
+            <div class="highlight-card">
+              <span class="highlight-icon" aria-hidden="true">&#127858;</span>
+              <h3 data-i18n="about.highlight1Title">Kotiruokaa</h3>
+              <p data-i18n="about.highlight1Text">
+                Perinteistä suomalaista ruokaa tuoreista raaka-aineista, ilman
+                puolivalmisteita
+              </p>
             </div>
-            <div class="bakery-item">
-              <div class="bakery-item-icon" aria-hidden="true">&#129360;</div>
-              <div>
-                <h3 data-i18n="bakery.savory">Pasteijat & suolaiset</h3>
-                <p data-i18n="bakery.savoryDesc">Liha- ja kasvispasteijoita sekä muita suolaisia leivonnaisia</p>
-              </div>
+            <div class="highlight-card">
+              <span class="highlight-icon" aria-hidden="true">&#127838;</span>
+              <h3 data-i18n="about.highlight2Title">Itse leivottua</h3>
+              <p data-i18n="about.highlight2Text">
+                Kaikki leipomotuotteet valmistetaan käsin paikan päällä joka
+                aamu
+              </p>
             </div>
-            <div class="bakery-item">
-              <div class="bakery-item-icon" aria-hidden="true">&#127874;</div>
-              <div>
-                <h3 data-i18n="bakery.cakes">Kakut & voileipäkakut</h3>
-                <p data-i18n="bakery.cakesDesc">Juhla- ja voileipäkakkuja tilauksesta – kysy lisää!</p>
-              </div>
+            <div class="highlight-card">
+              <span class="highlight-icon" aria-hidden="true"
+                >&#10084;&#65039;</span
+              >
+              <h3 data-i18n="about.highlight3Title">Perheravintola</h3>
+              <p data-i18n="about.highlight3Text">
+                Kolmen sukupolven perheyritys – lämmintä palvelua ja perinteitä
+              </p>
             </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <!-- Cake Order -->
-    <section class="section section-alt" id="kakkutilaus">
-      <div class="container">
-        <div class="cake-order-layout">
-          <div class="cake-order-info fade-in">
+      <!-- Food showcase divider -->
+      <div class="food-showcase">
+        <img
+          src="images/nakit-ja-muusi.jpg"
+          alt="Päivän lounas – nakit ja muusi salaattien kera"
+          loading="lazy"
+        />
+      </div>
+
+      <!-- Lunch Menu -->
+      <section class="section section-alt" id="lounas">
+        <div class="container">
+          <div class="section-header fade-in">
+            <span class="section-label" data-i18n="nav.menu">Lounaslista</span>
+            <h2 data-i18n="menu.title">Viikon lounaslista</h2>
+          </div>
+
+          <div class="menu-header-info fade-in">
+            <div class="menu-badge">
+              <span data-i18n="menu.price">Lounas</span>
+              <span class="price" id="menuPrice">12 &euro;</span>
+            </div>
+            <div class="menu-badge">
+              <span data-i18n="menu.lunchTime">Lounasaika</span>
+              <span class="price" data-i18n="menu.lunchTimeValue"
+                >10:30–14:00</span
+              >
+            </div>
+          </div>
+
+          <div class="menu-grid fade-in" id="menuGrid">
+            <!-- Populated by JS -->
+          </div>
+
+          <p class="menu-included fade-in" data-i18n="menu.included">
+            Lounaaseen sisältyy salaattipöytä, tuore leipä, jälkiruoka ja kahvi.
+          </p>
+          <p class="menu-updated" id="menuUpdated"></p>
+        </div>
+      </section>
+
+      <!-- Reviews (right after menu for social proof) -->
+      <section class="section" id="arvostelut">
+        <div class="container">
+          <div class="section-header fade-in">
+            <span class="section-label" data-i18n="reviews.source">Google Maps</span>
+            <h2 data-i18n="reviews.title">Mitä asiakkaamme sanovat</h2>
+          </div>
+
+          <div class="reviews-overview fade-in">
+            <div class="reviews-score">
+              <span class="score-number">4.5</span>
+              <span class="score-total" data-i18n="reviews.of">/</span>
+              <span class="score-total">5</span>
+            </div>
+            <div>
+              <div class="reviews-stars" aria-label="4.5 out of 5 stars">
+                <span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span class="star-half">&#9733;</span>
+              </div>
+              <div class="reviews-count">
+                69 <span data-i18n="reviews.basedOn">arvostelun perusteella</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="reviews-grid fade-in" id="reviewsGrid">
+            <!-- Populated by JS -->
+          </div>
+
+          <div class="reviews-cta fade-in">
+            <a href="https://maps.app.goo.gl/DQJr4gXQ6MGKKphq9" target="_blank" rel="noopener" class="btn btn-dark" data-i18n="reviews.readAll">Lue kaikki arvostelut</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Bakery -->
+      <section class="section section-alt" id="leipomo">
+        <div class="container">
+          <div class="bakery-layout">
+            <div class="bakery-image fade-in">
+              <img src="images/cake-buffet.jpg" alt="Tuoreet leivonnaiset vitriinissä" loading="lazy">
+            </div>
+            <div class="bakery-items fade-in">
+              <span class="section-label" data-i18n="nav.bakery">Leipomo</span>
+              <h2 data-i18n="bakery.title">Leipomo & Konditoria</h2>
+              <p style="color: var(--color-text-light); margin-bottom: var(--spacing-md); font-size: var(--fs-md);" data-i18n="bakery.description">Kaikki leipomotuotteemme leivotaan käsin paikan päällä joka aamu. Tarjolla on runsas valikoima perinteisiä suomalaisia leivonnaisia – tuoreena ja edullisesti.</p>
+
+              <div class="bakery-item">
+                <div class="bakery-item-icon" aria-hidden="true">&#127838;</div>
+                <div>
+                  <h3 data-i18n="bakery.bread">Tuoreet leivät & sämpylät</h3>
+                  <p data-i18n="bakery.breadDesc">Hiivaleipää, sämpylöitä ja muita tuoreita leipiä päivittäin</p>
+                </div>
+              </div>
+              <div class="bakery-item">
+                <div class="bakery-item-icon" aria-hidden="true">&#129473;</div>
+                <div>
+                  <h3 data-i18n="bakery.pastries">Pullat & pitko</h3>
+                  <p data-i18n="bakery.pastriesDesc">Voisilmäpullia, korvapuusteja ja muita makeita herkkuja</p>
+                </div>
+              </div>
+              <div class="bakery-item">
+                <div class="bakery-item-icon" aria-hidden="true">&#129384;</div>
+                <div>
+                  <h3 data-i18n="bakery.pies">Karjalanpiirakat</h3>
+                  <p data-i18n="bakery.piesDesc">Perinteiset karjalanpiirakat munavoin kera</p>
+                </div>
+              </div>
+              <div class="bakery-item">
+                <div class="bakery-item-icon" aria-hidden="true">&#129360;</div>
+                <div>
+                  <h3 data-i18n="bakery.savory">Pasteijat & suolaiset</h3>
+                  <p data-i18n="bakery.savoryDesc">Liha- ja kasvispasteijoita sekä muita suolaisia leivonnaisia</p>
+                </div>
+              </div>
+              <div class="bakery-item">
+                <div class="bakery-item-icon" aria-hidden="true">&#127874;</div>
+                <div>
+                  <h3 data-i18n="bakery.cakes">Kakut & voileipäkakut</h3>
+                  <p data-i18n="bakery.cakesDesc">Juhla- ja voileipäkakkuja tilauksesta – kysy lisää!</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Cake Order (form hidden behind a button) -->
+      <section class="section" id="kakkutilaus">
+        <div class="container">
+          <div class="section-header fade-in">
             <span class="section-label" data-i18n="nav.cakeOrder">Kakkutilaukset</span>
             <h2 data-i18n="cakeOrder.title">Tilaa kakku juhliin</h2>
             <p data-i18n="cakeOrder.description">Valmistamme kakkuja ja voileipäkakkuja tilauksesta juhliisi. Täytä alla oleva lomake, niin otamme sinuun yhteyttä ja sovimme yksityiskohdat.</p>
-            <div class="cake-order-image">
-              <img src="images/porriaiset-outside-street-view.jpg" alt="Pörriäiset ulkoa – Teiskontie 23" loading="lazy">
-            </div>
+            <button class="btn btn-primary" id="cakeFormToggle" onclick="toggleCakeForm()" data-i18n="cakeOrder.openForm" style="margin-top: var(--spacing-md);">Avaa tilauslomake</button>
           </div>
 
-          <form class="cake-form fade-in" id="cakeForm" novalidate>
-            <div class="form-group" aria-hidden="true" style="position:absolute;left:-9999px;top:-9999px;height:0;overflow:hidden;opacity:0;tab-index:-1;">
-              <label for="cakeWebsite">Website</label>
-              <input type="text" id="cakeWebsite" name="website" autocomplete="off" tabindex="-1">
-            </div>
-            <div class="form-row">
-              <div class="form-group">
-                <label for="cakeName"><span data-i18n="cakeOrder.name">Nimi</span> <span class="required-star">*</span></label>
-                <input type="text" id="cakeName" name="name" required data-i18n-placeholder="cakeOrder.namePlaceholder" placeholder="Koko nimesi">
-              </div>
-              <div class="form-group">
-                <label for="cakePhone"><span data-i18n="cakeOrder.phone">Puhelinnumero</span> <span class="required-star">*</span></label>
-                <input type="tel" id="cakePhone" name="phone" required data-i18n-placeholder="cakeOrder.phonePlaceholder" placeholder="04X XXX XXXX">
-              </div>
-            </div>
-
-            <div class="form-row">
-              <div class="form-group">
-                <label for="cakeEmail"><span data-i18n="cakeOrder.email">Sähköposti</span> <span class="required-star">*</span></label>
-                <input type="email" id="cakeEmail" name="email" required data-i18n-placeholder="cakeOrder.emailPlaceholder" placeholder="nimi@esimerkki.fi">
-              </div>
-              <div class="form-group">
-                <label for="cakeDate"><span data-i18n="cakeOrder.date">Noutopäivä</span> <span class="required-star">*</span></label>
-                <div class="date-input-wrap">
-                  <input type="text" id="cakeDate" name="date" required readonly
-                    data-i18n-placeholder="cakeOrder.datePlaceholder" placeholder="Noutopäivä">
-                  <svg class="date-icon" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path fill="currentColor" d="M19 4h-1V2h-2v2H8V2H6v2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V10h14v10zm0-12H5V6h14v2z"/></svg>
+          <div id="cakeFormWrapper" style="display: none;">
+            <div class="cake-order-layout">
+              <div class="cake-order-info fade-in">
+                <div class="cake-order-image">
+                  <img src="images/porriaiset-outside-street-view.jpg" alt="Pörriäiset ulkoa – Teiskontie 23" loading="lazy">
                 </div>
-                <p class="form-help" data-i18n="cakeOrder.dateHelp">Tarkistamme tilauksen ja olemme yhteydessä tarkan päivän ja kellonajan suhteen milloin tilaus olisi noudettavissa.</p>
               </div>
-            </div>
 
-            <div class="form-row">
+            <form class="cake-form fade-in" id="cakeForm" novalidate>
+              <div
+                class="form-group"
+                aria-hidden="true"
+                style="
+                  position: absolute;
+                  left: -9999px;
+                  top: -9999px;
+                  height: 0;
+                  overflow: hidden;
+                  opacity: 0;
+                  tab-index: -1;
+                "
+              >
+                <label for="cakeWebsite">Website</label>
+                <input
+                  type="text"
+                  id="cakeWebsite"
+                  name="website"
+                  autocomplete="off"
+                  tabindex="-1"
+                />
+              </div>
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="cakeName"
+                    ><span data-i18n="cakeOrder.name">Nimi</span>
+                    <span class="required-star">*</span></label
+                  >
+                  <input
+                    type="text"
+                    id="cakeName"
+                    name="name"
+                    required
+                    data-i18n-placeholder="cakeOrder.namePlaceholder"
+                    placeholder="Koko nimesi"
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="cakePhone"
+                    ><span data-i18n="cakeOrder.phone">Puhelinnumero</span>
+                    <span class="required-star">*</span></label
+                  >
+                  <input
+                    type="tel"
+                    id="cakePhone"
+                    name="phone"
+                    required
+                    data-i18n-placeholder="cakeOrder.phonePlaceholder"
+                    placeholder="04X XXX XXXX"
+                  />
+                </div>
+              </div>
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="cakeEmail"
+                    ><span data-i18n="cakeOrder.email">Sähköposti</span>
+                    <span class="required-star">*</span></label
+                  >
+                  <input
+                    type="email"
+                    id="cakeEmail"
+                    name="email"
+                    required
+                    data-i18n-placeholder="cakeOrder.emailPlaceholder"
+                    placeholder="nimi@esimerkki.fi"
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="cakeDate"
+                    ><span data-i18n="cakeOrder.date">Noutopäivä</span>
+                    <span class="required-star">*</span></label
+                  >
+                  <div class="date-input-wrap">
+                    <input
+                      type="text"
+                      id="cakeDate"
+                      name="date"
+                      required
+                      readonly
+                      data-i18n-placeholder="cakeOrder.datePlaceholder"
+                      placeholder="Noutopäivä"
+                    />
+                    <svg
+                      class="date-icon"
+                      viewBox="0 0 24 24"
+                      width="20"
+                      height="20"
+                      aria-hidden="true"
+                    >
+                      <path
+                        fill="currentColor"
+                        d="M19 4h-1V2h-2v2H8V2H6v2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V10h14v10zm0-12H5V6h14v2z"
+                      />
+                    </svg>
+                  </div>
+                  <p class="form-help" data-i18n="cakeOrder.dateHelp">
+                    Tarkistamme tilauksen ja olemme yhteydessä tarkan päivän ja
+                    kellonajan suhteen milloin tilaus olisi noudettavissa.
+                  </p>
+                </div>
+              </div>
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="cakeType"
+                    ><span data-i18n="cakeOrder.cakeType">Kakun tyyppi</span>
+                    <span class="required-star">*</span></label
+                  >
+                  <select id="cakeType" name="cakeType" required>
+                    <option value="" data-i18n="cakeOrder.cakeTypePlaceholder">
+                      Valitse kakun tyyppi
+                    </option>
+                    <option value="cream" data-i18n="cakeOrder.cakeTypes.cream">
+                      Kermakakku
+                    </option>
+                    <option value="berry" data-i18n="cakeOrder.cakeTypes.berry">
+                      Marjakakku
+                    </option>
+                    <option
+                      value="chocolate"
+                      data-i18n="cakeOrder.cakeTypes.chocolate"
+                    >
+                      Suklaakakku
+                    </option>
+                    <option
+                      value="sandwich"
+                      data-i18n="cakeOrder.cakeTypes.sandwich"
+                    >
+                      Voileipäkakku
+                    </option>
+                    <option value="other" data-i18n="cakeOrder.cakeTypes.other">
+                      Muu
+                    </option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label for="cakePeople"
+                    ><span data-i18n="cakeOrder.people"
+                      >Henkilömäärä (arvio)</span
+                    >
+                    <span class="required-star">*</span></label
+                  >
+                  <input
+                    type="number"
+                    id="cakePeople"
+                    name="people"
+                    min="1"
+                    required
+                    data-i18n-placeholder="cakeOrder.peoplePlaceholder"
+                    placeholder="esim. 20"
+                  />
+                </div>
+              </div>
+
               <div class="form-group">
-                <label for="cakeType"><span data-i18n="cakeOrder.cakeType">Kakun tyyppi</span> <span class="required-star">*</span></label>
-                <select id="cakeType" name="cakeType" required>
-                  <option value="" data-i18n="cakeOrder.cakeTypePlaceholder">Valitse kakun tyyppi</option>
-                  <option value="cream" data-i18n="cakeOrder.cakeTypes.cream">Kermakakku</option>
-                  <option value="berry" data-i18n="cakeOrder.cakeTypes.berry">Marjakakku</option>
-                  <option value="chocolate" data-i18n="cakeOrder.cakeTypes.chocolate">Suklaakakku</option>
-                  <option value="sandwich" data-i18n="cakeOrder.cakeTypes.sandwich">Voileipäkakku</option>
-                  <option value="other" data-i18n="cakeOrder.cakeTypes.other">Muu</option>
-                </select>
+                <label
+                  ><span data-i18n="cakeOrder.dietary">Erityisruokavaliot</span>
+                  <span class="required-star">*</span></label
+                >
+                <div class="dietary-checkboxes" id="dietaryCheckboxes">
+                  <label class="checkbox-label">
+                    <input
+                      type="checkbox"
+                      name="dietary"
+                      value="none"
+                      data-dietary-none
+                    />
+                    <span class="checkbox-custom"></span>
+                    <span data-i18n="cakeOrder.dietaryOptions.none"
+                      >Ei erityisruokavaliota</span
+                    >
+                  </label>
+                  <label class="checkbox-label">
+                    <input type="checkbox" name="dietary" value="glutenFree" />
+                    <span class="checkbox-custom"></span>
+                    <span data-i18n="cakeOrder.dietaryOptions.glutenFree"
+                      >Gluteeniton</span
+                    >
+                  </label>
+                  <label class="checkbox-label">
+                    <input type="checkbox" name="dietary" value="dairyFree" />
+                    <span class="checkbox-custom"></span>
+                    <span data-i18n="cakeOrder.dietaryOptions.dairyFree"
+                      >Maidoton</span
+                    >
+                  </label>
+                  <label class="checkbox-label">
+                    <input type="checkbox" name="dietary" value="lactoseFree" />
+                    <span class="checkbox-custom"></span>
+                    <span data-i18n="cakeOrder.dietaryOptions.lactoseFree"
+                      >Laktoositon</span
+                    >
+                  </label>
+                  <label class="checkbox-label">
+                    <input type="checkbox" name="dietary" value="eggFree" />
+                    <span class="checkbox-custom"></span>
+                    <span data-i18n="cakeOrder.dietaryOptions.eggFree"
+                      >Munaton</span
+                    >
+                  </label>
+                  <label class="checkbox-label">
+                    <input type="checkbox" name="dietary" value="vegan" />
+                    <span class="checkbox-custom"></span>
+                    <span data-i18n="cakeOrder.dietaryOptions.vegan"
+                      >Vegaaninen</span
+                    >
+                  </label>
+                  <label class="checkbox-label">
+                    <input type="checkbox" name="dietary" value="nutFree" />
+                    <span class="checkbox-custom"></span>
+                    <span data-i18n="cakeOrder.dietaryOptions.nutFree"
+                      >Pähkinätön</span
+                    >
+                  </label>
+                </div>
               </div>
+
               <div class="form-group">
-                <label for="cakePeople"><span data-i18n="cakeOrder.people">Henkilömäärä (arvio)</span> <span class="required-star">*</span></label>
-                <input type="number" id="cakePeople" name="people" min="1" required data-i18n-placeholder="cakeOrder.peoplePlaceholder" placeholder="esim. 20">
+                <label for="cakeMessage" data-i18n="cakeOrder.message"
+                  >Lisätiedot ja toiveet</label
+                >
+                <textarea
+                  id="cakeMessage"
+                  name="message"
+                  rows="4"
+                  data-i18n-placeholder="cakeOrder.messagePlaceholder"
+                  placeholder="Kerro tarkemmin toiveistasi: maut, koristelut, teksti kakun päälle..."
+                ></textarea>
               </div>
-            </div>
 
-            <div class="form-group">
-              <label><span data-i18n="cakeOrder.dietary">Erityisruokavaliot</span> <span class="required-star">*</span></label>
-              <div class="dietary-checkboxes" id="dietaryCheckboxes">
-                <label class="checkbox-label">
-                  <input type="checkbox" name="dietary" value="none" data-dietary-none>
-                  <span class="checkbox-custom"></span>
-                  <span data-i18n="cakeOrder.dietaryOptions.none">Ei erityisruokavaliota</span>
-                </label>
-                <label class="checkbox-label">
-                  <input type="checkbox" name="dietary" value="glutenFree">
-                  <span class="checkbox-custom"></span>
-                  <span data-i18n="cakeOrder.dietaryOptions.glutenFree">Gluteeniton</span>
-                </label>
-                <label class="checkbox-label">
-                  <input type="checkbox" name="dietary" value="dairyFree">
-                  <span class="checkbox-custom"></span>
-                  <span data-i18n="cakeOrder.dietaryOptions.dairyFree">Maidoton</span>
-                </label>
-                <label class="checkbox-label">
-                  <input type="checkbox" name="dietary" value="lactoseFree">
-                  <span class="checkbox-custom"></span>
-                  <span data-i18n="cakeOrder.dietaryOptions.lactoseFree">Laktoositon</span>
-                </label>
-                <label class="checkbox-label">
-                  <input type="checkbox" name="dietary" value="eggFree">
-                  <span class="checkbox-custom"></span>
-                  <span data-i18n="cakeOrder.dietaryOptions.eggFree">Munaton</span>
-                </label>
-                <label class="checkbox-label">
-                  <input type="checkbox" name="dietary" value="vegan">
-                  <span class="checkbox-custom"></span>
-                  <span data-i18n="cakeOrder.dietaryOptions.vegan">Vegaaninen</span>
-                </label>
-                <label class="checkbox-label">
-                  <input type="checkbox" name="dietary" value="nutFree">
-                  <span class="checkbox-custom"></span>
-                  <span data-i18n="cakeOrder.dietaryOptions.nutFree">Pähkinätön</span>
-                </label>
+              <div class="form-submit">
+                <button
+                  type="submit"
+                  class="btn btn-primary"
+                  data-i18n="cakeOrder.submit"
+                >
+                  Lähetä tilaus
+                </button>
               </div>
-            </div>
 
-            <div class="form-group">
-              <label for="cakeMessage" data-i18n="cakeOrder.message">Lisätiedot ja toiveet</label>
-              <textarea id="cakeMessage" name="message" rows="4" data-i18n-placeholder="cakeOrder.messagePlaceholder" placeholder="Kerro tarkemmin toiveistasi: maut, koristelut, teksti kakun päälle..."></textarea>
-            </div>
-
-            <div class="form-submit">
-              <button type="submit" class="btn btn-primary" data-i18n="cakeOrder.submit">Lähetä tilaus</button>
-            </div>
-
-            <div class="form-message" id="formMessage"></div>
-          </form>
-        </div>
-      </div>
-    </section>
-
-    <!-- Reviews -->
-    <section class="section" id="arvostelut">
-      <div class="container">
-        <div class="section-header fade-in">
-          <span class="section-label" data-i18n="reviews.source">Google Maps</span>
-          <h2 data-i18n="reviews.title">Mitä asiakkaamme sanovat</h2>
-        </div>
-
-        <div class="reviews-overview fade-in">
-          <div class="reviews-score">
-            <span class="score-number">4.5</span>
-            <span class="score-total" data-i18n="reviews.of">/</span>
-            <span class="score-total">5</span>
+              <div class="form-message" id="formMessage"></div>
+            </form>
           </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Contact -->
+      <section class="section section-alt" id="yhteystiedot">
+        <div class="container">
+          <div class="section-header fade-in">
+            <span class="section-label" data-i18n="nav.contact"
+              >Yhteystiedot</span
+            >
+            <h2 data-i18n="contact.title">Yhteystiedot</h2>
+          </div>
+
+          <div class="contact-layout fade-in">
+            <div class="contact-cards">
+              <div class="contact-card">
+                <div class="contact-card-icon" aria-hidden="true">
+                  &#128205;
+                </div>
+                <div>
+                  <h3 data-i18n="contact.address">Osoite</h3>
+                  <p>
+                    <a
+                      href="https://maps.app.goo.gl/DQJr4gXQ6MGKKphq9"
+                      target="_blank"
+                      rel="noopener"
+                      data-i18n="contact.addressValue"
+                      >Teiskontie 23, 33500 Tampere</a
+                    >
+                  </p>
+                </div>
+              </div>
+
+              <div class="contact-card">
+                <div class="contact-card-icon" aria-hidden="true">
+                  &#128222;
+                </div>
+                <div>
+                  <h3 data-i18n="contact.phone">Puhelin</h3>
+                  <p>
+                    <a href="tel:+358442442434" data-i18n="contact.phoneValue"
+                      >+358 44 244 2434</a
+                    >
+                  </p>
+                </div>
+              </div>
+
+              <div class="contact-card">
+                <div class="contact-card-icon" aria-hidden="true">
+                  &#128336;
+                </div>
+                <div>
+                  <h3 data-i18n="contact.hours">Aukioloajat</h3>
+                  <div class="hours-detail">
+                    <p>
+                      <strong data-i18n="contact.hoursWeekday">Ma–Pe</strong>
+                      <span data-i18n="contact.hoursWeekdayValue"
+                        >7:00–15:00</span
+                      >
+                    </p>
+                    <p>
+                      <strong data-i18n="contact.hoursWeekend">La–Su</strong>
+                      <span data-i18n="contact.hoursWeekendValue"
+                        >Suljettu</span
+                      >
+                    </p>
+                  </div>
+                  <div class="hours-detail" style="margin-top: 8px">
+                    <p>
+                      <strong data-i18n="contact.lunchHours">Lounasaika</strong>
+                      <span data-i18n="contact.lunchHoursValue"
+                        >10:30–14:00</span
+                      >
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="contact-card">
+                <div class="contact-card-icon" aria-hidden="true">
+                  &#128179;
+                </div>
+                <div>
+                  <h3 data-i18n="contact.payment">Maksutavat</h3>
+                  <p data-i18n="contact.paymentValue">
+                    Korttimaksu ja mobiilimaksu – ei käteistä
+                  </p>
+                </div>
+              </div>
+
+              <div class="contact-directions">
+                <a
+                  href="https://maps.app.goo.gl/DQJr4gXQ6MGKKphq9"
+                  target="_blank"
+                  rel="noopener"
+                  class="btn btn-primary"
+                  data-i18n="contact.directions"
+                  >Näytä reitti</a
+                >
+              </div>
+            </div>
+
+            <div class="contact-map">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1903.7002133006806!2d23.794605077689436!3d61.501250875738094!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x468f20a863d28019%3A0x517b49d073f91c31!2sP%C3%B6rri%C3%A4iset%20Lounaskahvila!5e0!3m2!1sen!2sfi!4v1774879594137!5m2!1sen!2sfi"
+                width="600"
+                height="450"
+                style="border: 0"
+                allowfullscreen=""
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+                title="Pörriäiset Lounaskahvila sijainti kartalla"
+              ></iframe>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+      <div class="container">
+        <div class="footer-inner">
           <div>
-            <div class="reviews-stars" aria-label="4.5 out of 5 stars">
-              <span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span class="star-half">&#9733;</span>
-            </div>
-            <div class="reviews-count">
-              69 <span data-i18n="reviews.basedOn">arvostelun perusteella</span>
+            <div class="footer-logo">Pörriäiset</div>
+            <div class="footer-tagline" data-i18n="footer.madeWith">
+              Tehty rakkaudella Tampereella
             </div>
           </div>
-        </div>
-
-        <div class="reviews-grid fade-in" id="reviewsGrid">
-          <!-- Populated by JS -->
-        </div>
-
-        <div class="reviews-cta fade-in">
-          <a href="https://maps.app.goo.gl/DQJr4gXQ6MGKKphq9" target="_blank" rel="noopener" class="btn btn-dark" data-i18n="reviews.readAll">Lue kaikki arvostelut</a>
-        </div>
-      </div>
-    </section>
-
-    <!-- Contact -->
-    <section class="section section-alt" id="yhteystiedot">
-      <div class="container">
-        <div class="section-header fade-in">
-          <span class="section-label" data-i18n="nav.contact">Yhteystiedot</span>
-          <h2 data-i18n="contact.title">Yhteystiedot</h2>
-        </div>
-
-        <div class="contact-layout fade-in">
-          <div class="contact-cards">
-            <div class="contact-card">
-              <div class="contact-card-icon" aria-hidden="true">&#128205;</div>
-              <div>
-                <h3 data-i18n="contact.address">Osoite</h3>
-                <p>
-                  <a href="https://maps.app.goo.gl/DQJr4gXQ6MGKKphq9" target="_blank" rel="noopener" data-i18n="contact.addressValue">Teiskontie 23, 33500 Tampere</a>
-                </p>
-              </div>
-            </div>
-
-            <div class="contact-card">
-              <div class="contact-card-icon" aria-hidden="true">&#128222;</div>
-              <div>
-                <h3 data-i18n="contact.phone">Puhelin</h3>
-                <p><a href="tel:+358442442434" data-i18n="contact.phoneValue">+358 44 244 2434</a></p>
-              </div>
-            </div>
-
-            <div class="contact-card">
-              <div class="contact-card-icon" aria-hidden="true">&#128336;</div>
-              <div>
-                <h3 data-i18n="contact.hours">Aukioloajat</h3>
-                <div class="hours-detail">
-                  <p><strong data-i18n="contact.hoursWeekday">Ma–Pe</strong> <span data-i18n="contact.hoursWeekdayValue">7:00–15:00</span></p>
-                  <p><strong data-i18n="contact.hoursWeekend">La–Su</strong> <span data-i18n="contact.hoursWeekendValue">Suljettu</span></p>
-                </div>
-                <div class="hours-detail" style="margin-top: 8px;">
-                  <p><strong data-i18n="contact.lunchHours">Lounasaika</strong> <span data-i18n="contact.lunchHoursValue">10:30–14:00</span></p>
-                </div>
-              </div>
-            </div>
-
-            <div class="contact-card">
-              <div class="contact-card-icon" aria-hidden="true">&#128179;</div>
-              <div>
-                <h3 data-i18n="contact.payment">Maksutavat</h3>
-                <p data-i18n="contact.paymentValue">Korttimaksu ja mobiilimaksu (NFC) – ei käteistä</p>
-              </div>
-            </div>
-
-            <div class="contact-directions">
-              <a href="https://maps.app.goo.gl/DQJr4gXQ6MGKKphq9" target="_blank" rel="noopener" class="btn btn-primary" data-i18n="contact.directions">Näytä reitti</a>
-            </div>
-          </div>
-
-          <div class="contact-map">
-            <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1903.7002133006806!2d23.794605077689436!3d61.501250875738094!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x468f20a863d28019%3A0x517b49d073f91c31!2sP%C3%B6rri%C3%A4iset%20Lounaskahvila!5e0!3m2!1sen!2sfi!4v1774879594137!5m2!1sen!2sfi"
-              width="600"
-              height="450"
-              style="border:0;"
-              allowfullscreen=""
-              loading="lazy"
-              referrerpolicy="no-referrer-when-downgrade"
-              title="Pörriäiset Lounaskahvila sijainti kartalla"
-            ></iframe>
+          <div class="footer-text">
+            &copy; <span id="footerYear">2026</span> Pörriäiset Lounaskahvila.
+            <span data-i18n="footer.rights">Kaikki oikeudet pidätetään.</span>
           </div>
         </div>
       </div>
-    </section>
-  </main>
+    </footer>
 
-  <!-- Footer -->
-  <footer class="site-footer">
-    <div class="container">
-      <div class="footer-inner">
-        <div>
-          <div class="footer-logo">Pörriäiset</div>
-          <div class="footer-tagline" data-i18n="footer.madeWith">Tehty rakkaudella Tampereella</div>
-        </div>
-        <div class="footer-text">
-          &copy; <span id="footerYear">2026</span> Pörriäiset Lounaskahvila. <span data-i18n="footer.rights">Kaikki oikeudet pidätetään.</span>
-        </div>
-      </div>
-    </div>
-  </footer>
-
-  <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
-  <script src="https://cdn.jsdelivr.net/npm/flatpickr/dist/l10n/fi.js"></script>
-  <script src="js/translations.js"></script>
-  <script src="js/main.js"></script>
-</body>
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr/dist/l10n/fi.js"></script>
+    <script src="js/translations.js"></script>
+    <script src="js/main.js"></script>
+  </body>
 </html>
