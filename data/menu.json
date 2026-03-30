@@ -1,0 +1,45 @@
+{
+  "weekNumber": 14,
+  "year": 2026,
+  "price": "12",
+  "lastUpdated": "2026-03-30",
+  "dessert": "Marjapiirakka ja vaniljakastike",
+  "dessertEn": "Berry pie with vanilla sauce",
+  "days": [
+    {
+      "day": "monday",
+      "main": "Jauhelihakastike ja perunamuusi",
+      "soup": "Kasvisminestronekeitto",
+      "mainEn": "Minced meat sauce with mashed potatoes",
+      "soupEn": "Vegetable minestrone soup"
+    },
+    {
+      "day": "tuesday",
+      "main": "Lihapullat, muusi ja puolukkahillo",
+      "soup": "Lohikeitto",
+      "mainEn": "Meatballs, mash, and lingonberry jam",
+      "soupEn": "Salmon soup"
+    },
+    {
+      "day": "wednesday",
+      "main": "Karjalanpaisti ja perunat",
+      "soup": "Pinaattikeitto ja kananmuna",
+      "mainEn": "Karelian stew with potatoes",
+      "soupEn": "Spinach soup with egg"
+    },
+    {
+      "day": "thursday",
+      "main": "Hernekeitto ja pannukakku",
+      "soup": "",
+      "mainEn": "Pea soup and oven pancake",
+      "soupEn": ""
+    },
+    {
+      "day": "friday",
+      "main": "Paistettu sei ja tillimuusi",
+      "soup": "Broileriwokki ja riisi",
+      "mainEn": "Pan-fried coalfish with dill mash",
+      "soupEn": "Chicken wok with rice"
+    }
+  ]
+}

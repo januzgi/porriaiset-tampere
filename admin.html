@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pörriäiset – Lounaslistan hallinta</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lora:wght@600;700&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --color-gold: #C8962E;
+      --color-gold-light: #E8C96A;
+      --color-gold-pale: #FBF3E0;
+      --color-brown-dark: #2B1810;
+      --color-brown: #5C3A21;
+      --color-cream: #FFFAF5;
+      --color-cream-dark: #F3EBE0;
+      --color-white: #FFFFFF;
+      --color-text: #3C2A1E;
+      --color-text-light: #7A6B60;
+      --color-border: #E8DDD2;
+      --color-success: #2E7D32;
+      --color-success-bg: #E8F5E9;
+      --font-heading: 'Lora', Georgia, serif;
+      --font-body: 'Source Sans 3', system-ui, sans-serif;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: var(--font-body);
+      background: var(--color-cream-dark);
+      color: var(--color-text);
+      line-height: 1.6;
+      min-height: 100vh;
+    }
+
+    .admin-header {
+      background: var(--color-brown-dark);
+      color: var(--color-white);
+      padding: 1.5rem 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .admin-header h1 {
+      font-family: var(--font-heading);
+      font-size: 1.5rem;
+      color: var(--color-gold-light);
+    }
+
+    .admin-header h1 span {
+      font-family: var(--font-body);
+      font-size: 0.85rem;
+      font-weight: 400;
+      color: rgba(255,255,255,0.6);
+      display: block;
+    }
+
+    .admin-header a {
+      color: rgba(255,255,255,0.7);
+      text-decoration: none;
+      font-size: 0.9rem;
+      padding: 8px 16px;
+      border: 1px solid rgba(255,255,255,0.3);
+      border-radius: 6px;
+      transition: all 0.3s;
+    }
+
+    .admin-header a:hover {
+      background: rgba(255,255,255,0.1);
+      color: var(--color-white);
+    }
+
+    .admin-main {
+      max-width: 900px;
+      margin: 2rem auto;
+      padding: 0 1.5rem;
+    }
+
+    .admin-card {
+      background: var(--color-white);
+      border-radius: 12px;
+      padding: 2rem;
+      margin-bottom: 1.5rem;
+      border: 1px solid var(--color-border);
+      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    }
+
+    .admin-card h2 {
+      font-family: var(--font-heading);
+      font-size: 1.25rem;
+      color: var(--color-brown-dark);
+      margin-bottom: 1.5rem;
+      padding-bottom: 0.75rem;
+      border-bottom: 2px solid var(--color-gold-pale);
+    }
+
+    .meta-row {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .field {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .field label {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--color-brown);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .field input, .field textarea {
+      width: 100%;
+      padding: 10px 14px;
+      border: 1px solid var(--color-border);
+      border-radius: 8px;
+      font-family: var(--font-body);
+      font-size: 1rem;
+      color: var(--color-text);
+      background: var(--color-cream);
+      transition: border-color 0.3s, box-shadow 0.3s;
+    }
+
+    .field input:focus, .field textarea:focus {
+      outline: none;
+      border-color: var(--color-gold);
+      box-shadow: 0 0 0 3px var(--color-gold-pale);
+    }
+
+    .day-block {
+      padding: 1.25rem;
+      margin-bottom: 1rem;
+      border: 1px solid var(--color-border);
+      border-radius: 10px;
+      background: var(--color-cream);
+      transition: border-color 0.3s;
+    }
+
+    .day-block:hover {
+      border-color: var(--color-gold);
+    }
+
+    .day-block.thursday {
+      background: var(--color-gold-pale);
+      border-color: var(--color-gold);
+    }
+
+    .day-name {
+      font-family: var(--font-heading);
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--color-brown-dark);
+      margin-bottom: 1rem;
+    }
+
+    .day-fields {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 28px;
+      font-family: var(--font-body);
+      font-size: 1rem;
+      font-weight: 600;
+      border: none;
+      border-radius: 50px;
+      cursor: pointer;
+      transition: all 0.3s;
+    }
+
+    .btn-save {
+      background: var(--color-gold);
+      color: var(--color-white);
+    }
+
+    .btn-save:hover {
+      background: var(--color-gold-light);
+      color: var(--color-brown-dark);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    }
+
+    .btn-reset {
+      background: transparent;
+      color: var(--color-text-light);
+      border: 1px solid var(--color-border);
+      margin-left: 0.75rem;
+    }
+
+    .btn-reset:hover {
+      border-color: var(--color-text-light);
+      color: var(--color-text);
+    }
+
+    .actions {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .save-message {
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: var(--color-success);
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+
+    .save-message.show {
+      opacity: 1;
+    }
+
+    .help-text {
+      font-size: 0.85rem;
+      color: var(--color-text-light);
+      margin-top: 0.5rem;
+      font-style: italic;
+    }
+
+    .preview-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.9rem;
+      color: var(--color-gold);
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .preview-link:hover {
+      text-decoration: underline;
+    }
+
+    @media (max-width: 600px) {
+      .day-fields {
+        grid-template-columns: 1fr;
+      }
+      .admin-card {
+        padding: 1.25rem;
+      }
+      .meta-row {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="admin-header">
+    <h1>
+      Pörriäiset
+      <span>Lounaslistan hallinta</span>
+    </h1>
+    <a href="index.html">&#8592; Takaisin sivustolle</a>
+  </header>
+
+  <main class="admin-main">
+    <!-- Info -->
+    <div class="admin-card">
+      <h2>Ohjeet</h2>
+      <p>Täytä viikon lounaslista alla oleviin kenttiin ja paina <strong>Tallenna</strong>. Muutokset näkyvät heti sivustolla.</p>
+      <p class="help-text">Vinkki: Torstaipäivä on korostettu, koska perinteisesti tarjotaan hernekeittoa ja pannukakkua.</p>
+    </div>
+
+    <!-- Menu metadata -->
+    <div class="admin-card">
+      <h2>Viikon tiedot</h2>
+      <div class="meta-row">
+        <div class="field">
+          <label for="weekNumber">Viikko</label>
+          <input type="number" id="weekNumber" min="1" max="53" placeholder="esim. 14">
+        </div>
+        <div class="field">
+          <label for="year">Vuosi</label>
+          <input type="number" id="year" min="2024" max="2030" placeholder="esim. 2026">
+        </div>
+        <div class="field">
+          <label for="price">Lounaan hinta (&euro;)</label>
+          <input type="text" id="price" placeholder="esim. 12">
+        </div>
+      </div>
+      <div class="field">
+        <label for="dessert">Viikon jälkiruoka</label>
+        <input type="text" id="dessert" placeholder="esim. Marjapiirakka ja vaniljakastike">
+      </div>
+      <div class="field" style="margin-top: 1rem;">
+        <label for="dessertEn">Jälkiruoka englanniksi</label>
+        <input type="text" id="dessertEn" placeholder="e.g. Berry pie with vanilla sauce">
+      </div>
+    </div>
+
+    <!-- Daily menus -->
+    <div class="admin-card">
+      <h2>Päivittäinen lounaslista</h2>
+
+      <div class="day-block" id="day-monday">
+        <div class="day-name">Maanantai</div>
+        <div class="day-fields">
+          <div class="field">
+            <label>Pääruoka</label>
+            <input type="text" data-day="monday" data-field="main" placeholder="esim. Jauhelihakastike ja perunamuusi">
+          </div>
+          <div class="field">
+            <label>Keitto</label>
+            <input type="text" data-day="monday" data-field="soup" placeholder="esim. Kasvisminestronekeitto">
+          </div>
+          <div class="field">
+            <label>Pääruoka (EN)</label>
+            <input type="text" data-day="monday" data-field="mainEn" placeholder="e.g. Minced meat sauce with mashed potatoes">
+          </div>
+          <div class="field">
+            <label>Keitto (EN)</label>
+            <input type="text" data-day="monday" data-field="soupEn" placeholder="e.g. Vegetable minestrone soup">
+          </div>
+        </div>
+      </div>
+
+      <div class="day-block" id="day-tuesday">
+        <div class="day-name">Tiistai</div>
+        <div class="day-fields">
+          <div class="field">
+            <label>Pääruoka</label>
+            <input type="text" data-day="tuesday" data-field="main" placeholder="esim. Lihapullat ja muusi">
+          </div>
+          <div class="field">
+            <label>Keitto</label>
+            <input type="text" data-day="tuesday" data-field="soup" placeholder="esim. Lohikeitto">
+          </div>
+          <div class="field">
+            <label>Pääruoka (EN)</label>
+            <input type="text" data-day="tuesday" data-field="mainEn" placeholder="e.g. Meatballs and mash">
+          </div>
+          <div class="field">
+            <label>Keitto (EN)</label>
+            <input type="text" data-day="tuesday" data-field="soupEn" placeholder="e.g. Salmon soup">
+          </div>
+        </div>
+      </div>
+
+      <div class="day-block" id="day-wednesday">
+        <div class="day-name">Keskiviikko</div>
+        <div class="day-fields">
+          <div class="field">
+            <label>Pääruoka</label>
+            <input type="text" data-day="wednesday" data-field="main" placeholder="esim. Karjalanpaisti ja perunat">
+          </div>
+          <div class="field">
+            <label>Keitto</label>
+            <input type="text" data-day="wednesday" data-field="soup" placeholder="esim. Pinaattikeitto">
+          </div>
+          <div class="field">
+            <label>Pääruoka (EN)</label>
+            <input type="text" data-day="wednesday" data-field="mainEn" placeholder="e.g. Karelian stew with potatoes">
+          </div>
+          <div class="field">
+            <label>Keitto (EN)</label>
+            <input type="text" data-day="wednesday" data-field="soupEn" placeholder="e.g. Spinach soup with egg">
+          </div>
+        </div>
+      </div>
+
+      <div class="day-block thursday" id="day-thursday">
+        <div class="day-name">Torstai &#11088;</div>
+        <div class="day-fields">
+          <div class="field">
+            <label>Pääruoka</label>
+            <input type="text" data-day="thursday" data-field="main" placeholder="esim. Hernekeitto ja pannukakku">
+          </div>
+          <div class="field">
+            <label>Keitto</label>
+            <input type="text" data-day="thursday" data-field="soup" placeholder="(jätä tyhjäksi jos vain yksi vaihtoehto)">
+          </div>
+          <div class="field">
+            <label>Pääruoka (EN)</label>
+            <input type="text" data-day="thursday" data-field="mainEn" placeholder="e.g. Pea soup and oven pancake">
+          </div>
+          <div class="field">
+            <label>Keitto (EN)</label>
+            <input type="text" data-day="thursday" data-field="soupEn" placeholder="">
+          </div>
+        </div>
+      </div>
+
+      <div class="day-block" id="day-friday">
+        <div class="day-name">Perjantai</div>
+        <div class="day-fields">
+          <div class="field">
+            <label>Pääruoka</label>
+            <input type="text" data-day="friday" data-field="main" placeholder="esim. Paistettu kala ja tillimuusi">
+          </div>
+          <div class="field">
+            <label>Keitto</label>
+            <input type="text" data-day="friday" data-field="soup" placeholder="esim. Broileriwokki ja riisi">
+          </div>
+          <div class="field">
+            <label>Pääruoka (EN)</label>
+            <input type="text" data-day="friday" data-field="mainEn" placeholder="e.g. Pan-fried fish with dill mash">
+          </div>
+          <div class="field">
+            <label>Keitto (EN)</label>
+            <input type="text" data-day="friday" data-field="soupEn" placeholder="e.g. Chicken wok with rice">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Actions -->
+    <div class="admin-card">
+      <div class="actions">
+        <button class="btn btn-save" id="saveBtn" onclick="saveMenu()">Tallenna</button>
+        <button class="btn btn-reset" onclick="resetMenu()">Tyhjennä kaikki</button>
+        <span class="save-message" id="saveMessage">Tallennettu!</span>
+      </div>
+      <p class="help-text" style="margin-top: 1rem;">
+        Tallennuksen jälkeen voit tarkistaa tuloksen:
+        <a href="index.html#lounas" class="preview-link">Esikatsele sivustolla &#8594;</a>
+      </p>
+    </div>
+  </main>
+
+  <script>
+    const DAYS = ['monday', 'tuesday', 'wednesday', 'thursday', 'friday'];
+
+    // Load existing data on page load
+    document.addEventListener('DOMContentLoaded', async () => {
+      let data = null;
+
+      // Check localStorage first
+      const stored = localStorage.getItem('porriaiset-menu');
+      if (stored) {
+        data = JSON.parse(stored);
+      } else {
+        // Fall back to JSON file
+        try {
+          const response = await fetch('data/menu.json');
+          data = await response.json();
+        } catch (e) {
+          // Start fresh
+        }
+      }
+
+      if (data) {
+        populateForm(data);
+      }
+
+      // Set defaults for empty fields
+      const yearEl = document.getElementById('year');
+      if (!yearEl.value) yearEl.value = new Date().getFullYear();
+
+      const weekEl = document.getElementById('weekNumber');
+      if (!weekEl.value) weekEl.value = getISOWeek(new Date());
+    });
+
+    function populateForm(data) {
+      document.getElementById('weekNumber').value = data.weekNumber || '';
+      document.getElementById('year').value = data.year || '';
+      document.getElementById('price').value = data.price || '';
+      document.getElementById('dessert').value = data.dessert || '';
+      document.getElementById('dessertEn').value = data.dessertEn || '';
+
+      if (data.days) {
+        data.days.forEach(dayData => {
+          const inputs = document.querySelectorAll(`[data-day="${dayData.day}"]`);
+          inputs.forEach(input => {
+            const field = input.getAttribute('data-field');
+            if (dayData[field] !== undefined) {
+              input.value = dayData[field];
+            }
+          });
+        });
+      }
+    }
+
+    function saveMenu() {
+      const data = {
+        weekNumber: parseInt(document.getElementById('weekNumber').value) || null,
+        year: parseInt(document.getElementById('year').value) || null,
+        price: document.getElementById('price').value || '12',
+        lastUpdated: new Date().toISOString().split('T')[0],
+        dessert: document.getElementById('dessert').value,
+        dessertEn: document.getElementById('dessertEn').value,
+        days: DAYS.map(day => {
+          const fields = {};
+          document.querySelectorAll(`[data-day="${day}"]`).forEach(input => {
+            fields[input.getAttribute('data-field')] = input.value;
+          });
+          return { day, ...fields };
+        })
+      };
+
+      localStorage.setItem('porriaiset-menu', JSON.stringify(data));
+
+      // Show saved message
+      const msg = document.getElementById('saveMessage');
+      msg.classList.add('show');
+      setTimeout(() => msg.classList.remove('show'), 3000);
+    }
+
+    function resetMenu() {
+      if (!confirm('Haluatko varmasti tyhjentää kaikki kentät?')) return;
+
+      document.querySelectorAll('.day-block input').forEach(el => el.value = '');
+      document.getElementById('dessert').value = '';
+      document.getElementById('dessertEn').value = '';
+      localStorage.removeItem('porriaiset-menu');
+    }
+
+    function getISOWeek(date) {
+      const d = new Date(Date.UTC(date.getFullYear(), date.getMonth(), date.getDate()));
+      d.setUTCDate(d.getUTCDate() + 4 - (d.getUTCDay() || 7));
+      const yearStart = new Date(Date.UTC(d.getUTCFullYear(), 0, 1));
+      return Math.ceil(((d - yearStart) / 86400000 + 1) / 7);
+    }
+  </script>
+</body>
+</html>
