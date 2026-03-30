@@ -1,23 +1,23 @@
 /* ===== CSS Custom Properties ===== */
 :root {
-  --color-gold: #C8962E;
-  --color-gold-light: #E8C96A;
-  --color-gold-pale: #FBF3E0;
-  --color-brown-dark: #2B1810;
-  --color-brown: #5C3A21;
-  --color-brown-light: #8B6B4A;
-  --color-burgundy: #7A2828;
-  --color-burgundy-light: #A04040;
-  --color-cream: #FFFAF5;
-  --color-cream-dark: #F3EBE0;
-  --color-white: #FFFFFF;
-  --color-text: #3C2A1E;
-  --color-text-light: #7A6B60;
-  --color-border: #E8DDD2;
+  --color-gold: #c8962e;
+  --color-gold-light: #e8c96a;
+  --color-gold-pale: #fbf3e0;
+  --color-brown-dark: #2b1810;
+  --color-brown: #5c3a21;
+  --color-brown-light: #8b6b4a;
+  --color-burgundy: #7a2828;
+  --color-burgundy-light: #a04040;
+  --color-cream: #fffaf5;
+  --color-cream-dark: #f3ebe0;
+  --color-white: #ffffff;
+  --color-text: #3c2a1e;
+  --color-text-light: #7a6b60;
+  --color-border: #e8ddd2;
   --color-overlay: rgba(43, 24, 16, 0.65);
 
-  --font-heading: 'Lora', 'Georgia', serif;
-  --font-body: 'Source Sans 3', 'Segoe UI', system-ui, sans-serif;
+  --font-heading: "Lora", "Georgia", serif;
+  --font-body: "Source Sans 3", "Segoe UI", system-ui, sans-serif;
 
   --fs-xs: 0.8rem;
   --fs-sm: 0.9rem;
@@ -41,10 +41,10 @@
   --radius-lg: 16px;
   --radius-xl: 24px;
 
-  --shadow-sm: 0 1px 3px rgba(0,0,0,0.08);
-  --shadow-md: 0 4px 12px rgba(0,0,0,0.1);
-  --shadow-lg: 0 8px 30px rgba(0,0,0,0.12);
-  --shadow-xl: 0 16px 48px rgba(0,0,0,0.15);
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.08);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 8px 30px rgba(0, 0, 0, 0.12);
+  --shadow-xl: 0 16px 48px rgba(0, 0, 0, 0.15);
 
   --transition: 0.3s ease;
   --max-width: 1200px;
@@ -52,7 +52,9 @@
 }
 
 /* ===== Reset & Base ===== */
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
@@ -89,7 +91,10 @@ a:hover {
   color: var(--color-burgundy-light);
 }
 
-h1, h2, h3, h4 {
+h1,
+h2,
+h3,
+h4 {
   font-family: var(--font-heading);
   color: var(--color-brown-dark);
   line-height: 1.3;
@@ -152,7 +157,7 @@ ul {
   width: 1px;
   height: 1px;
   overflow: hidden;
-  clip: rect(0,0,0,0);
+  clip: rect(0, 0, 0, 0);
   white-space: nowrap;
   border: 0;
 }
@@ -161,7 +166,9 @@ ul {
 .fade-in {
   opacity: 0;
   transform: translateY(24px);
-  transition: opacity 0.6s ease, transform 0.6s ease;
+  transition:
+    opacity 0.6s ease,
+    transform 0.6s ease;
 }
 
 .fade-in.visible {
@@ -239,7 +246,7 @@ ul {
 }
 
 .nav-links a::after {
-  content: '';
+  content: "";
   position: absolute;
   bottom: 0;
   left: 0;
@@ -338,7 +345,7 @@ ul {
 /* ===== Hero ===== */
 .hero {
   position: relative;
-  min-height: 100vh;
+  min-height: 80vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -350,14 +357,14 @@ ul {
 .hero-bg {
   position: absolute;
   inset: 0;
-  background-image: url('../images/outdoors-view-sunshine.jpg');
+  background-image: url("../images/outdoors-view-sunshine.jpg");
   background-size: cover;
-  background-position: center;
+  background-position: 70% center;
   background-repeat: no-repeat;
 }
 
 .hero-bg::after {
-  content: '';
+  content: "";
   position: absolute;
   inset: 0;
   background: linear-gradient(
@@ -372,7 +379,8 @@ ul {
   position: relative;
   z-index: 1;
   color: var(--color-white);
-  padding: calc(var(--nav-height) + var(--spacing-xl)) var(--spacing-md) var(--spacing-xl);
+  padding: calc(var(--nav-height) + var(--spacing-xl)) var(--spacing-md)
+    var(--spacing-xl);
   max-width: 800px;
 }
 
@@ -381,7 +389,7 @@ ul {
   color: var(--color-gold-light);
   margin-bottom: var(--spacing-xs);
   letter-spacing: -0.02em;
-  text-shadow: 0 2px 8px rgba(0,0,0,0.3);
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
 }
 
 .hero-subtitle {
@@ -389,7 +397,7 @@ ul {
   font-weight: 300;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: rgba(255,255,255,0.85);
+  color: rgba(255, 255, 255, 0.85);
   margin-bottom: var(--spacing-md);
 }
 
@@ -398,9 +406,9 @@ ul {
   font-size: var(--fs-xl);
   font-weight: 400;
   font-style: italic;
-  color: rgba(255,255,255,0.92);
+  color: rgba(255, 255, 255, 0.92);
   margin-bottom: var(--spacing-lg);
-  text-shadow: 0 1px 4px rgba(0,0,0,0.2);
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
 }
 
 .hero-cta {
@@ -442,11 +450,11 @@ ul {
 .btn-outline {
   background: transparent;
   color: var(--color-white);
-  border-color: rgba(255,255,255,0.5);
+  border-color: rgba(255, 255, 255, 0.5);
 }
 
 .btn-outline:hover {
-  background: rgba(255,255,255,0.1);
+  background: rgba(255, 255, 255, 0.1);
   border-color: var(--color-white);
   color: var(--color-white);
   transform: translateY(-2px);
@@ -511,7 +519,9 @@ ul {
   background: var(--color-white);
   border-radius: var(--radius-lg);
   box-shadow: var(--shadow-sm);
-  transition: transform var(--transition), box-shadow var(--transition);
+  transition:
+    transform var(--transition),
+    box-shadow var(--transition);
 }
 
 .highlight-card:hover {
@@ -575,7 +585,9 @@ ul {
   padding: var(--spacing-md);
   box-shadow: var(--shadow-sm);
   border: 1px solid var(--color-border);
-  transition: transform var(--transition), box-shadow var(--transition);
+  transition:
+    transform var(--transition),
+    box-shadow var(--transition);
 }
 
 .menu-day:hover {
@@ -639,7 +651,11 @@ ul {
 /* Thursday special */
 .menu-day.thursday-special {
   border-color: var(--color-gold);
-  background: linear-gradient(135deg, var(--color-white) 0%, var(--color-gold-pale) 100%);
+  background: linear-gradient(
+    135deg,
+    var(--color-white) 0%,
+    var(--color-gold-pale) 100%
+  );
 }
 
 /* ===== Bakery ===== */
@@ -678,7 +694,9 @@ ul {
   border-radius: var(--radius-md);
   box-shadow: var(--shadow-sm);
   border: 1px solid var(--color-border);
-  transition: transform var(--transition), box-shadow var(--transition);
+  transition:
+    transform var(--transition),
+    box-shadow var(--transition);
 }
 
 .bakery-item:hover {
@@ -782,7 +800,9 @@ ul {
   font-size: var(--fs-base);
   color: var(--color-text);
   background: var(--color-cream);
-  transition: border-color var(--transition), box-shadow var(--transition);
+  transition:
+    border-color var(--transition),
+    box-shadow var(--transition);
 }
 
 .form-group input:focus,
@@ -981,7 +1001,7 @@ span.flatpickr-weekday {
 }
 
 .checkbox-label input[type="checkbox"]:checked + .checkbox-custom::after {
-  content: '';
+  content: "";
   width: 6px;
   height: 10px;
   border: solid var(--color-white);
@@ -1001,7 +1021,7 @@ span.flatpickr-weekday {
 }
 
 .dietary-error {
-  color: #C62828;
+  color: #c62828;
   font-size: var(--fs-xs);
   margin-top: 6px;
   display: none;
@@ -1022,16 +1042,16 @@ span.flatpickr-weekday {
 
 .form-message.success {
   display: block;
-  background: #E8F5E9;
-  color: #2E7D32;
-  border: 1px solid #A5D6A7;
+  background: #e8f5e9;
+  color: #2e7d32;
+  border: 1px solid #a5d6a7;
 }
 
 .form-message.error {
   display: block;
-  background: #FFEBEE;
-  color: #C62828;
-  border: 1px solid #EF9A9A;
+  background: #ffebee;
+  color: #c62828;
+  border: 1px solid #ef9a9a;
 }
 
 /* ===== Reviews ===== */
@@ -1075,7 +1095,7 @@ span.flatpickr-weekday {
 }
 
 .star-half::before {
-  content: '\2605';
+  content: "\2605";
   position: absolute;
   left: 0;
   top: 0;
@@ -1101,7 +1121,9 @@ span.flatpickr-weekday {
   border-radius: var(--radius-lg);
   box-shadow: var(--shadow-sm);
   border: 1px solid var(--color-border);
-  transition: transform var(--transition), box-shadow var(--transition);
+  transition:
+    transform var(--transition),
+    box-shadow var(--transition);
 }
 
 .review-card:hover {
@@ -1159,7 +1181,7 @@ span.flatpickr-weekday {
 }
 
 .review-text::before {
-  content: '\201C';
+  content: "\201C";
   font-size: var(--fs-xl);
   font-family: var(--font-heading);
   color: var(--color-gold);
@@ -1259,7 +1281,7 @@ span.flatpickr-weekday {
 /* ===== Footer ===== */
 .site-footer {
   background: var(--color-brown-dark);
-  color: rgba(255,255,255,0.7);
+  color: rgba(255, 255, 255, 0.7);
   padding: var(--spacing-lg) 0;
 }
 
@@ -1285,7 +1307,7 @@ span.flatpickr-weekday {
 .footer-tagline {
   font-size: var(--fs-sm);
   font-style: italic;
-  color: rgba(255,255,255,0.5);
+  color: rgba(255, 255, 255, 0.5);
 }
 
 /* ===== Food Photo Section (between about & menu) ===== */
@@ -1343,7 +1365,8 @@ span.flatpickr-weekday {
     height: 100dvh;
     background: var(--color-cream);
     flex-direction: column;
-    padding: calc(var(--nav-height) + var(--spacing-lg)) var(--spacing-lg) var(--spacing-lg);
+    padding: calc(var(--nav-height) + var(--spacing-lg)) var(--spacing-lg)
+      var(--spacing-lg);
     gap: var(--spacing-sm);
     box-shadow: var(--shadow-xl);
     transition: right var(--transition);
@@ -1375,7 +1398,7 @@ span.flatpickr-weekday {
     display: none;
     position: fixed;
     inset: 0;
-    background: rgba(0,0,0,0.4);
+    background: rgba(0, 0, 0, 0.4);
     z-index: 999;
   }
 
