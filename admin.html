@@ -286,6 +286,19 @@
       text-decoration: underline;
     }
 
+    .settings-toggle {
+      display: inline-block;
+      font-size: 0.85rem;
+      color: var(--color-text-light);
+      text-decoration: none;
+      padding: 6px 16px;
+      transition: color 0.3s;
+    }
+
+    .settings-toggle:hover {
+      color: var(--color-brown-dark);
+    }
+
     @media (max-width: 600px) {
       .day-fields {
         grid-template-columns: 1fr;
@@ -309,18 +322,6 @@
   </header>
 
   <main class="admin-main">
-    <!-- GitHub connection -->
-    <div class="admin-card" id="tokenCard">
-      <h2>GitHub-yhteys</h2>
-      <div id="tokenStatus"></div>
-      <div class="field" id="tokenField" style="margin-top: 0.75rem;">
-        <label for="ghToken">GitHub-token</label>
-        <input type="password" id="ghToken" placeholder="ghp_... tai github_pat_...">
-        <p class="help-text">Luo token: GitHub &rarr; Settings &rarr; Developer settings &rarr; Fine-grained tokens. Oikeudet: Contents &rarr; Read and write.</p>
-      </div>
-      <button class="btn btn-save" style="margin-top: 0.75rem;" onclick="saveToken()">Yhdistä</button>
-    </div>
-
     <!-- Info -->
     <div class="admin-card">
       <h2>Ohjeet</h2>
@@ -482,6 +483,23 @@
         <a href="index.html#lounas" class="preview-link">Esikatsele sivustolla &#8594;</a>
       </p>
     </div>
+
+    <!-- Settings toggle -->
+    <div style="text-align: center; margin-top: 0.5rem;">
+      <a href="#" class="settings-toggle" onclick="toggleSettings(); return false;" id="settingsToggle">Asetukset &#9662;</a>
+    </div>
+
+    <!-- GitHub connection (hidden by default) -->
+    <div class="admin-card settings-panel" id="settingsPanel" style="display: none;">
+      <h2>GitHub-yhteys</h2>
+      <div id="tokenStatus"></div>
+      <div class="field" id="tokenField" style="margin-top: 0.75rem;">
+        <label for="ghToken">GitHub-token</label>
+        <input type="password" id="ghToken" placeholder="ghp_... tai github_pat_...">
+        <p class="help-text">Luo token: GitHub &rarr; Settings &rarr; Developer settings &rarr; Fine-grained tokens. Oikeudet: Contents &rarr; Read and write.</p>
+      </div>
+      <button class="btn btn-save" style="margin-top: 0.75rem;" onclick="saveToken()">Yhdistä</button>
+    </div>
   </main>
 
   <script>
@@ -489,6 +507,15 @@
     const REPO_OWNER = 'januzgi';
     const REPO_NAME = 'porriaiset-tampere';
     const FILE_PATH = 'data/menu.json';
+
+    /* ===== Settings Toggle ===== */
+    function toggleSettings() {
+      const panel = document.getElementById('settingsPanel');
+      const toggle = document.getElementById('settingsToggle');
+      const visible = panel.style.display !== 'none';
+      panel.style.display = visible ? 'none' : 'block';
+      toggle.innerHTML = visible ? 'Asetukset &#9662;' : 'Asetukset &#9652;';
+    }
 
     /* ===== Token Management ===== */
     function getToken() {

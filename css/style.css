@@ -1370,13 +1370,13 @@ span.flatpickr-weekday {
     display: flex;
   }
 
-  /* Mobile overlay */
+  /* Mobile overlay — must be below .site-nav (1000) so nav-links inside it stays above */
   .nav-overlay {
     display: none;
     position: fixed;
     inset: 0;
     background: rgba(0,0,0,0.4);
-    z-index: 1001;
+    z-index: 999;
   }
 
   .nav-overlay.open {
