@@ -45,15 +45,9 @@ let menuData = null;
 
 async function loadMenu() {
   try {
-    // In production, this would fetch from an API
-    // For the demo, check localStorage first (admin edits), then fall back to JSON file
-    const stored = localStorage.getItem('porriaiset-menu');
-    if (stored) {
-      menuData = JSON.parse(stored);
-    } else {
-      const response = await fetch('data/menu.json');
-      menuData = await response.json();
-    }
+    // Fetch the live JSON file (on GitHub Pages this is the latest committed version)
+    const response = await fetch('data/menu.json');
+    menuData = await response.json();
     renderMenu();
   } catch (e) {
     document.getElementById('menuGrid').innerHTML =

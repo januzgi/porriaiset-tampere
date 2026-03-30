@@ -219,13 +219,50 @@
     .save-message {
       font-size: 0.9rem;
       font-weight: 500;
-      color: var(--color-success);
-      opacity: 0;
-      transition: opacity 0.3s;
+      margin-top: 0.75rem;
+      padding: 10px 14px;
+      border-radius: 8px;
+      display: none;
     }
 
-    .save-message.show {
-      opacity: 1;
+    .save-message.success {
+      display: block;
+      background: #E8F5E9;
+      color: #2E7D32;
+      border: 1px solid #A5D6A7;
+    }
+
+    .save-message.error {
+      display: block;
+      background: #FFEBEE;
+      color: #C62828;
+      border: 1px solid #EF9A9A;
+    }
+
+    .save-message.loading {
+      display: block;
+      background: var(--color-gold-pale);
+      color: var(--color-brown);
+      border: 1px solid var(--color-gold);
+    }
+
+    .token-status {
+      padding: 10px 14px;
+      border-radius: 8px;
+      font-size: 0.9rem;
+      font-weight: 500;
+    }
+
+    .token-status.connected {
+      background: #E8F5E9;
+      color: #2E7D32;
+      border: 1px solid #A5D6A7;
+    }
+
+    .token-status.disconnected {
+      background: #FFF3E0;
+      color: #E65100;
+      border: 1px solid #FFCC80;
     }
 
     .help-text {
@@ -272,10 +309,22 @@
   </header>
 
   <main class="admin-main">
+    <!-- GitHub connection -->
+    <div class="admin-card" id="tokenCard">
+      <h2>GitHub-yhteys</h2>
+      <div id="tokenStatus"></div>
+      <div class="field" id="tokenField" style="margin-top: 0.75rem;">
+        <label for="ghToken">GitHub-token</label>
+        <input type="password" id="ghToken" placeholder="ghp_... tai github_pat_...">
+        <p class="help-text">Luo token: GitHub &rarr; Settings &rarr; Developer settings &rarr; Fine-grained tokens. Oikeudet: Contents &rarr; Read and write.</p>
+      </div>
+      <button class="btn btn-save" style="margin-top: 0.75rem;" onclick="saveToken()">Yhdistä</button>
+    </div>
+
     <!-- Info -->
     <div class="admin-card">
       <h2>Ohjeet</h2>
-      <p>Täytä viikon lounaslista alla oleviin kenttiin ja paina <strong>Tallenna</strong>. Muutokset näkyvät heti sivustolla.</p>
+      <p>Täytä viikon lounaslista alla oleviin kenttiin ja paina <strong>Tallenna ja julkaise</strong>. Muutokset näkyvät sivustolla noin minuutin kuluessa.</p>
       <p class="help-text">Vinkki: Torstaipäivä on korostettu, koska perinteisesti tarjotaan hernekeittoa ja pannukakkua.</p>
     </div>
 
@@ -424,12 +473,12 @@
     <!-- Actions -->
     <div class="admin-card">
       <div class="actions">
-        <button class="btn btn-save" id="saveBtn" onclick="saveMenu()">Tallenna</button>
+        <button class="btn btn-save" id="saveBtn" onclick="saveMenu()">Tallenna ja julkaise</button>
         <button class="btn btn-reset" onclick="resetMenu()">Tyhjennä kaikki</button>
-        <span class="save-message" id="saveMessage">Tallennettu!</span>
       </div>
+      <div class="save-message" id="saveMessage"></div>
       <p class="help-text" style="margin-top: 1rem;">
-        Tallennuksen jälkeen voit tarkistaa tuloksen:
+        Tallennuksen jälkeen muutokset näkyvät sivustolla noin minuutin kuluessa:
         <a href="index.html#lounas" class="preview-link">Esikatsele sivustolla &#8594;</a>
       </p>
     </div>
@@ -437,23 +486,57 @@
 
   <script>
     const DAYS = ['monday', 'tuesday', 'wednesday', 'thursday', 'friday'];
+    const REPO_OWNER = 'januzgi';
+    const REPO_NAME = 'porriaiset-tampere';
+    const FILE_PATH = 'data/menu.json';
 
-    // Load existing data on page load
+    /* ===== Token Management ===== */
+    function getToken() {
+      return localStorage.getItem('porriaiset-gh-token');
+    }
+
+    function saveToken() {
+      const token = document.getElementById('ghToken').value.trim();
+      if (!token) return;
+      localStorage.setItem('porriaiset-gh-token', token);
+      document.getElementById('ghToken').value = '';
+      updateTokenStatus();
+    }
+
+    function updateTokenStatus() {
+      const token = getToken();
+      const statusEl = document.getElementById('tokenStatus');
+      const fieldEl = document.getElementById('tokenField');
+
+      if (token) {
+        statusEl.innerHTML = '<div class="token-status connected">Yhdistetty GitHubiin. <a href="#" onclick="disconnectToken();return false;" style="color:inherit;text-decoration:underline;">Poista token</a></div>';
+        fieldEl.style.display = 'none';
+        fieldEl.nextElementSibling.style.display = 'none';
+      } else {
+        statusEl.innerHTML = '<div class="token-status disconnected">Ei yhteyttä. Syötä GitHub-token julkaisua varten.</div>';
+        fieldEl.style.display = '';
+        fieldEl.nextElementSibling.style.display = '';
+      }
+    }
+
+    function disconnectToken() {
+      if (!confirm('Haluatko varmasti poistaa tokenin?')) return;
+      localStorage.removeItem('porriaiset-gh-token');
+      updateTokenStatus();
+    }
+
+    /* ===== Load Menu ===== */
     document.addEventListener('DOMContentLoaded', async () => {
+      updateTokenStatus();
+
       let data = null;
 
-      // Check localStorage first
-      const stored = localStorage.getItem('porriaiset-menu');
-      if (stored) {
-        data = JSON.parse(stored);
-      } else {
-        // Fall back to JSON file
-        try {
-          const response = await fetch('data/menu.json');
-          data = await response.json();
-        } catch (e) {
-          // Start fresh
-        }
+      // Always fetch the live file from the repo (or fall back to local)
+      try {
+        const response = await fetch('data/menu.json');
+        data = await response.json();
+      } catch (e) {
+        // Start fresh
       }
 
       if (data) {
@@ -488,7 +571,11 @@
       }
     }
 
-    function saveMenu() {
+    /* ===== Save & Publish ===== */
+    async function saveMenu() {
+      const msg = document.getElementById('saveMessage');
+      const btn = document.getElementById('saveBtn');
+
       const data = {
         weekNumber: parseInt(document.getElementById('weekNumber').value) || null,
         year: parseInt(document.getElementById('year').value) || null,
@@ -505,12 +592,69 @@
         })
       };
 
+      // Always save to localStorage as a fallback
       localStorage.setItem('porriaiset-menu', JSON.stringify(data));
 
-      // Show saved message
-      const msg = document.getElementById('saveMessage');
-      msg.classList.add('show');
-      setTimeout(() => msg.classList.remove('show'), 3000);
+      const token = getToken();
+      if (!token) {
+        msg.className = 'save-message error';
+        msg.textContent = 'GitHub-token puuttuu. Syötä token yläpuolelle julkaisua varten.';
+        return;
+      }
+
+      // Publish to GitHub
+      btn.disabled = true;
+      btn.textContent = 'Julkaistaan...';
+      msg.className = 'save-message loading';
+      msg.textContent = 'Lähetetään muutoksia GitHubiin...';
+
+      try {
+        // Get current file SHA (required for updates)
+        const getRes = await fetch(
+          `https://api.github.com/repos/${REPO_OWNER}/${REPO_NAME}/contents/${FILE_PATH}`,
+          { headers: { 'Authorization': `Bearer ${token}` } }
+        );
+
+        let sha = null;
+        if (getRes.ok) {
+          const fileInfo = await getRes.json();
+          sha = fileInfo.sha;
+        }
+
+        // Commit the updated file
+        const content = btoa(unescape(encodeURIComponent(JSON.stringify(data, null, 2) + '\n')));
+        const body = {
+          message: `Lounaslista päivitetty: vko ${data.weekNumber || '?'}/${data.year || '?'}`,
+          content: content
+        };
+        if (sha) body.sha = sha;
+
+        const putRes = await fetch(
+          `https://api.github.com/repos/${REPO_OWNER}/${REPO_NAME}/contents/${FILE_PATH}`,
+          {
+            method: 'PUT',
+            headers: {
+              'Authorization': `Bearer ${token}`,
+              'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(body)
+          }
+        );
+
+        if (putRes.ok) {
+          msg.className = 'save-message success';
+          msg.textContent = 'Julkaistu! Muutokset näkyvät sivustolla noin minuutin kuluessa.';
+        } else {
+          const err = await putRes.json();
+          throw new Error(err.message || 'Tuntematon virhe');
+        }
+      } catch (e) {
+        msg.className = 'save-message error';
+        msg.textContent = `Julkaisu epäonnistui: ${e.message}`;
+      } finally {
+        btn.disabled = false;
+        btn.textContent = 'Tallenna ja julkaise';
+      }
     }
 
     function resetMenu() {
