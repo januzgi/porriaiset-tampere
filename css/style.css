@@ -635,9 +635,21 @@ ul {
 
 .menu-updated {
   text-align: center;
-  margin-top: var(--spacing-xs);
+  margin-top: var(--spacing-sm);
   font-size: var(--fs-xs);
   color: var(--color-text-light);
+  letter-spacing: 0.03em;
+}
+
+.menu-updated::before {
+  content: '';
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  background: var(--color-gold);
+  border-radius: 50%;
+  margin-right: 6px;
+  vertical-align: middle;
 }
 
 .menu-no-data {

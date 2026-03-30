@@ -110,10 +110,12 @@ function renderMenu() {
       </div>`;
   }
 
-  // Updated date
+  // Updated date — format as d.m.yyyy
   if (menuData.lastUpdated) {
+    const [y, m, d] = menuData.lastUpdated.split('-');
+    const formatted = `${parseInt(d)}.${parseInt(m)}.${y}`;
     document.getElementById('menuUpdated').textContent =
-      `${t.updated}: ${menuData.lastUpdated}`;
+      `${t.updated}: ${formatted}`;
   }
 }
 
