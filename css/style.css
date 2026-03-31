@@ -574,9 +574,15 @@ ul {
 }
 
 .menu-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   gap: var(--spacing-md);
+}
+
+.menu-grid > .menu-day {
+  flex: 1 1 220px;
+  max-width: 340px;
 }
 
 .menu-day {
@@ -1428,8 +1434,9 @@ span.flatpickr-weekday {
     gap: var(--spacing-sm);
   }
 
-  .menu-grid {
-    grid-template-columns: repeat(2, 1fr);
+  .menu-grid > .menu-day {
+    flex: 0 1 calc(50% - var(--spacing-md) / 2);
+    max-width: none;
   }
 
   .form-row {
@@ -1476,7 +1483,8 @@ span.flatpickr-weekday {
     align-items: center;
   }
 
-  .menu-grid {
-    grid-template-columns: 1fr;
+  .menu-grid > .menu-day {
+    flex: 0 1 100%;
+    max-width: none;
   }
 }

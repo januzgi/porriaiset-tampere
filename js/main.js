@@ -59,6 +59,12 @@ function renderMenu() {
   const grid = document.getElementById('menuGrid');
   const t = translations[currentLang].menu;
 
+  // Update section title with week number
+  const menuTitle = document.querySelector('#lounas h2[data-i18n="menu.title"]');
+  if (menuTitle && menuData && menuData.weekNumber) {
+    menuTitle.textContent = t.title.replace('{week}', menuData.weekNumber);
+  }
+
   if (!menuData || !menuData.days) {
     grid.innerHTML = `<p class="menu-no-data">${t.noMenu}</p>`;
     return;
@@ -102,8 +108,8 @@ function renderMenu() {
   const dessertText = isEn && menuData.dessertEn ? menuData.dessertEn : menuData.dessert;
   if (dessertText) {
     grid.innerHTML += `
-      <div class="menu-day" style="grid-column: 1 / -1; text-align: center; background: var(--color-gold-pale);">
-        <div class="menu-day-name">${t.dessert}</div>
+      <div class="menu-day" style="flex: 0 1 100%; max-width: none; text-align: center; background: var(--color-gold-pale);">
+        <div class="menu-day-name">${menuData.weekNumber ? t.dessert.replace('{week}', menuData.weekNumber) : t.dessert.replace(' {week}', '')}</div>
         <div class="menu-item">
           <span class="menu-item-name">${dessertText}</span>
         </div>

@@ -32,11 +32,11 @@ const translations = {
         "Kolmen sukupolven perheyritys – lämmintä palvelua ja perinteitä",
     },
     menu: {
-      title: "Viikon lounaslista",
+      title: "Viikon {week} lounaslista",
       week: "Viikko",
       mainCourse: "Pääruoka",
       soup: "Keitto",
-      dessert: "Viikon jälkiruoka",
+      dessert: "Viikon {week} jälkiruoka",
       included:
         "Lounaaseen sisältyy salaattipöytä, tuore leipä, jälkiruoka ja kahvi.",
       price: "Lounas",
@@ -217,11 +217,11 @@ const translations = {
         "Three generations of flavour — warm service and tradition",
     },
     menu: {
-      title: "Weekly Lunch Menu",
+      title: "Week {week} Lunch Menu",
       week: "Week",
       mainCourse: "Main course",
       soup: "Soup",
-      dessert: "Dessert of the week",
+      dessert: "Dessert of week {week}",
       included: "Lunch includes salad bar, fresh bread, dessert, and coffee.",
       price: "Lunch",
       lunchTime: "Lunch hours",
