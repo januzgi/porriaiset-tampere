@@ -285,7 +285,7 @@
           </div>
 
           <div class="reviews-cta fade-in">
-            <a href="https://maps.app.goo.gl/DQJr4gXQ6MGKKphq9" target="_blank" rel="noopener" class="btn btn-dark" data-i18n="reviews.readAll">Lue kaikki arvostelut</a>
+            <a href="https://maps.app.goo.gl/DQJr4gXQ6MGKKphq9" target="_blank" rel="noopener" class="btn btn-dark btn-external" data-i18n="reviews.readAll">Lue kaikki arvostelut Google Mapsissa</a>
           </div>
         </div>
       </section>
@@ -349,16 +349,14 @@
             <span class="section-label" data-i18n="nav.cakeOrder">Kakkutilaukset</span>
             <h2 data-i18n="cakeOrder.title">Tilaa kakku juhliin</h2>
             <p data-i18n="cakeOrder.description">Valmistamme kakkuja ja voileipäkakkuja tilauksesta juhliisi. Täytä alla oleva lomake, niin otamme sinuun yhteyttä ja sovimme yksityiskohdat.</p>
+            <div class="cake-order-image" style="margin-top: var(--spacing-md);">
+              <img src="images/porriaiset-outside-street-view.jpg" alt="Pörriäiset ulkoa – Teiskontie 23" loading="lazy">
+            </div>
             <button class="btn btn-primary" id="cakeFormToggle" onclick="toggleCakeForm()" data-i18n="cakeOrder.openForm" style="margin-top: var(--spacing-md);">Avaa tilauslomake</button>
           </div>
 
           <div id="cakeFormWrapper" style="display: none;">
             <div class="cake-order-layout">
-              <div class="cake-order-info fade-in">
-                <div class="cake-order-image">
-                  <img src="images/porriaiset-outside-street-view.jpg" alt="Pörriäiset ulkoa – Teiskontie 23" loading="lazy">
-                </div>
-              </div>
 
             <form class="cake-form fade-in" id="cakeForm" novalidate>
               <div
@@ -701,9 +699,9 @@
                   href="https://maps.app.goo.gl/DQJr4gXQ6MGKKphq9"
                   target="_blank"
                   rel="noopener"
-                  class="btn btn-primary"
+                  class="btn btn-primary btn-external"
                   data-i18n="contact.directions"
-                  >Näytä reitti</a
+                  >Näytä reitti Google Mapsissa</a
                 >
               </div>
             </div>

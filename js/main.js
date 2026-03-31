@@ -61,8 +61,10 @@ function renderMenu() {
 
   // Update section title with week number
   const menuTitle = document.querySelector('#lounas h2[data-i18n="menu.title"]');
-  if (menuTitle && menuData && menuData.weekNumber) {
-    menuTitle.textContent = t.title.replace('{week}', menuData.weekNumber);
+  if (menuTitle) {
+    menuTitle.textContent = menuData && menuData.weekNumber
+      ? t.title.replace('{week}', menuData.weekNumber)
+      : t.title.replace(' {week}', '');
   }
 
   if (!menuData || !menuData.days) {

@@ -479,6 +479,18 @@ ul {
   box-shadow: var(--shadow-md);
 }
 
+.btn-external::after {
+  content: '';
+  display: inline-block;
+  width: 0.75em;
+  height: 0.75em;
+  margin-left: 0.4em;
+  vertical-align: middle;
+  background: currentColor;
+  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6'/%3E%3Cpolyline points='15 3 21 3 21 9'/%3E%3Cline x1='10' y1='14' x2='21' y2='3'/%3E%3C/svg%3E") no-repeat center / contain;
+  mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6'/%3E%3Cpolyline points='15 3 21 3 21 9'/%3E%3Cline x1='10' y1='14' x2='21' y2='3'/%3E%3C/svg%3E") no-repeat center / contain;
+}
+
 /* ===== About ===== */
 .about-grid {
   display: grid;
@@ -743,10 +755,8 @@ ul {
 
 /* ===== Cake Order Form ===== */
 .cake-order-layout {
-  display: grid;
-  grid-template-columns: 5fr 7fr;
-  gap: var(--spacing-xl);
-  align-items: start;
+  max-width: 720px;
+  margin: 0 auto;
 }
 
 .cake-order-info {
@@ -768,6 +778,9 @@ ul {
   overflow: hidden;
   box-shadow: var(--shadow-md);
   margin-top: var(--spacing-md);
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .cake-order-image img {
@@ -1350,17 +1363,12 @@ span.flatpickr-weekday {
 
   .about-grid,
   .bakery-layout,
-  .cake-order-layout,
   .contact-layout {
     grid-template-columns: 1fr;
   }
 
   .bakery-image {
     position: static;
-  }
-
-  .cake-order-info {
-    padding-right: 0;
   }
 
   /* Mobile nav */

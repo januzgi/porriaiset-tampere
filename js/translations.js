@@ -120,7 +120,7 @@ const translations = {
       of: "/",
       basedOn: "arvostelun perusteella",
       source: "Google Maps",
-      readAll: "Lue kaikki arvostelut",
+      readAll: "Lue kaikki arvostelut Google Mapsissa",
       reviewsList: [
         {
           name: "Jenni",
@@ -176,7 +176,7 @@ const translations = {
       findUs: "Löydä meidät",
       payment: "Maksutavat",
       paymentValue: "Käteinen, korttimaksu ja mobiilimaksu",
-      directions: "Näytä reitti",
+      directions: "Näytä reitti Google Mapsissa",
     },
     footer: {
       rights: "Kaikki oikeudet pidätetään.",
@@ -302,7 +302,7 @@ const translations = {
       of: "/",
       basedOn: "reviews",
       source: "Google Maps",
-      readAll: "Read all reviews",
+      readAll: "Read all reviews on Google Maps",
       reviewsList: [
         {
           name: "Jenni",
@@ -358,7 +358,7 @@ const translations = {
       findUs: "Find Us",
       payment: "Payment",
       paymentValue: "Cash, card, and mobile payment",
-      directions: "Get directions",
+      directions: "Get directions on Google Maps",
     },
     footer: {
       rights: "All rights reserved.",
