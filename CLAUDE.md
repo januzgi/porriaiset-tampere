@@ -73,4 +73,4 @@ Hero → About → Food showcase → Lunch Menu → Reviews → Bakery → Cake 
 
 - Finnish is the primary locale; all default text in HTML is Finnish
 - The admin page is self-contained — it does not share JS/CSS with the main site
-- Business info: card-only payment (no cash), Mon–Fri 7–15, lunch 10:30–14:00, phone +358 44 244 2434
+- Business info: cash, card, and mobile payment, Mon–Fri 7–15, lunch 10:30–14:00, phone +358 44 244 2434

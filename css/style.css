@@ -641,7 +641,7 @@ ul {
   letter-spacing: 0.03em;
 }
 
-.menu-updated::before {
+.menu-updated:not(:empty)::before {
   content: '';
   display: inline-block;
   width: 6px;
@@ -1356,16 +1356,6 @@ span.flatpickr-weekday {
   .cake-order-info {
     padding-right: 0;
   }
-}
-
-@media (max-width: 768px) {
-  :root {
-    --fs-4xl: 2.5rem;
-    --fs-3xl: 2rem;
-    --fs-2xl: 1.5rem;
-    --nav-height: 64px;
-    --spacing-2xl: 4rem;
-  }
 
   /* Mobile nav */
   .nav-links {
@@ -1417,6 +1407,16 @@ span.flatpickr-weekday {
   .nav-overlay.open {
     display: block;
   }
+}
+
+@media (max-width: 768px) {
+  :root {
+    --fs-4xl: 2.5rem;
+    --fs-3xl: 2rem;
+    --fs-2xl: 1.5rem;
+    --nav-height: 64px;
+    --spacing-2xl: 4rem;
+  }
 
   /* Sections */
   .hero-content h1 {
@@ -1429,7 +1429,7 @@ span.flatpickr-weekday {
   }
 
   .menu-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, 1fr);
   }
 
   .form-row {
@@ -1474,5 +1474,9 @@ span.flatpickr-weekday {
   .menu-header-info {
     flex-direction: column;
     align-items: center;
+  }
+
+  .menu-grid {
+    grid-template-columns: 1fr;
   }
 }

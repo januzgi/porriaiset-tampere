@@ -175,7 +175,7 @@ const translations = {
       lunchHoursValue: "10:30–14:00",
       findUs: "Löydä meidät",
       payment: "Maksutavat",
-      paymentValue: "Korttimaksu ja mobiilimaksu – ei käteistä",
+      paymentValue: "Käteinen, korttimaksu ja mobiilimaksu",
       directions: "Näytä reitti",
     },
     footer: {
@@ -357,7 +357,7 @@ const translations = {
       lunchHoursValue: "10:30 AM – 2:00 PM",
       findUs: "Find Us",
       payment: "Payment",
-      paymentValue: "Card and mobile payment — no cash",
+      paymentValue: "Cash, card, and mobile payment",
       directions: "Get directions",
     },
     footer: {
